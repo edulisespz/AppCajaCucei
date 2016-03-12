@@ -9,5 +9,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SelfNoteFragment noteFragment = SelfNoteFragment.newInstance();
+
+        android.support.v4.app.FragmentTransaction fragTransaction= this.getSupportFragmentManager().beginTransaction();
+        fragTransaction.replace(R.id.container, noteFragment);
+        fragTransaction.commit();
     }
 }
