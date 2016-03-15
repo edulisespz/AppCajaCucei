@@ -1,7 +1,10 @@
 package udg.cucei.appcajacucei;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,5 +18,18 @@ public class MainActivity extends AppCompatActivity {
         android.support.v4.app.FragmentTransaction fragTransaction= this.getSupportFragmentManager().beginTransaction();
         fragTransaction.replace(R.id.container, noteFragment);
         fragTransaction.commit();
+
+
+        Button boton =(Button) findViewById(R.id.button1);
+
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PdfPrueba.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

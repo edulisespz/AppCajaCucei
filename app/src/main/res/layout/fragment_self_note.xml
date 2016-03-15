@@ -23,7 +23,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="20px"
-        android:layout_weight="0.20" />
+        android:layout_weight="0.03" />
 
     <Button
         android:id="@+id/button_save"
