@@ -18,19 +18,17 @@
         android:layout_weight="0.30" />
 
     <Button
-        android:onClick="buscarImagen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cargar imagen"
-        android:id="@+id/button"
+        android:id="@+id/btnimagen"
         android:layout_gravity="center_horizontal" />
 
     <Button
-        android:onClick="compartirInstagram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Instagram"
-        android:id="@+id/button2"
+        android:id="@+id/btnshareinstagram"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

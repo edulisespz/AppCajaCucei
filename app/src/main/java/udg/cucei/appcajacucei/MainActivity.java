@@ -30,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btnInstagram = (Button) findViewById(R.id.btninstagram);
+
+        btnInstagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InstagramTest.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

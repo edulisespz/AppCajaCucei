@@ -28,6 +28,9 @@
         </provider>
 
         <activity android:name=".PdfPrueba"></activity>
+
+        <activity android:name=".InstagramTest"></activity>
+
     </application>
 
 </manifest>

@@ -21,6 +21,13 @@
             android:id="@+id/button1"
             android:layout_gravity="center" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instagram Prueba"
+            android:id="@+id/btninstagram"
+            android:layout_gravity="center_horizontal" />
+
         <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
