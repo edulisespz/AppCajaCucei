@@ -8,6 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +22,7 @@
         <!-- FileProvider - a ContentProvider for making the image file securely available to the other end -->
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.example.fileprovider"
+            android:authorities="udg.cucei.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data

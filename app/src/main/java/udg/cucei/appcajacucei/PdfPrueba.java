@@ -12,13 +12,15 @@ import android.graphics.pdf.PdfDocument.Page;
 import android.graphics.pdf.PdfDocument.PageInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.print.PrintAttributes;
 import android.print.PrintAttributes.Margins;
 import android.print.PrintAttributes.Resolution;
 import android.print.pdf.PrintedPdfDocument;
 import android.support.v4.content.FileProvider;
-import android.view.Menu;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 /**
  * Created by Edgar Ulises on 14/03/2016.
@@ -73,16 +75,28 @@ public class PdfPrueba extends Activity implements Runnable {
             // since the Share mechanism can't accept a byte[]. though it can
             // accept a String/CharSequence. Meh.
             try {
-                File pdfDirPath = new File(getFilesDir(), "pdfs");
-                pdfDirPath.mkdirs();
+                File pdfDirPath = new File(Environment.getExternalStorageDirectory(), "pdfs");
+
+                boolean a= pdfDirPath.mkdirs();
+
+                Log.d("mkdirs",String.valueOf(a));
+
+                Log.d("path: ", pdfDirPath.toString());
+
                 File file = new File(pdfDirPath, "pdfsend.pdf");
-                Uri contentUri = FileProvider.getUriForFile(this, "com.example.fileprovider", file);
+                //Uri contentUri = FileProvider.getUriForFile(this, "udg.cucei.fileprovider", file);
+
+
+                Log.d("Exist: ", String.valueOf(file.exists()) );
+
                 os = new FileOutputStream(file);
                 document.writeTo(os);
                 document.close();
                 os.close();
 
-                shareDocument(contentUri);
+                //shareDocument(contentUri);
+                Toast.makeText(getApplicationContext() , "File Created",
+                        Toast.LENGTH_LONG).show();
             } catch (IOException e) {
                 throw new RuntimeException("Error generating file", e);
             }
@@ -93,9 +107,9 @@ public class PdfPrueba extends Activity implements Runnable {
             mShareIntent.setAction(Intent.ACTION_SEND);
             mShareIntent.setType("application/pdf");
             // Assuming it may go via eMail:
-            mShareIntent.putExtra(Intent.EXTRA_SUBJECT, "Here is a PDF from PdfSend");
+            //mShareIntent.putExtra(Intent.EXTRA_SUBJECT, "Here is a PDF from PdfSend");
             // Attach the PDf as a Uri, since Android can't take it as bytes yet.
-            mShareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+            //mShareIntent.putExtra(Intent.EXTRA_STREAM, uri);
             startActivity(mShareIntent);
             return;
         }
