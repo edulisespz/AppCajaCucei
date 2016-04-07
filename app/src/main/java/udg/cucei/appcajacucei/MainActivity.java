@@ -40,6 +40,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button botonPaint =(Button) findViewById(R.id.button_Paint);
+
+        botonPaint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PaintTest.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

@@ -94,15 +94,26 @@ public class PdfPrueba extends Activity implements Runnable {
                 document.close();
                 os.close();
 
+                // TODO: PDF share thing
                 //shareDocument(contentUri);
-                Toast.makeText(getApplicationContext() , "File Created",
-                        Toast.LENGTH_LONG).show();
+
+                runOnUiThread(new Runnable() {
+                    public void run() {
+
+                        Toast.makeText(getApplicationContext(), "File Created",
+                                Toast.LENGTH_LONG)
+                                .show();
+                    }
+                });
+
             } catch (IOException e) {
                 throw new RuntimeException("Error generating file", e);
             }
         }
 
         private void shareDocument(Uri uri) {
+            //TODO: pdf share thing2
+
             mShareIntent = new Intent();
             mShareIntent.setAction(Intent.ACTION_SEND);
             mShareIntent.setType("application/pdf");
