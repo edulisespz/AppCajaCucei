@@ -50,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button button_Menu = (Button) findViewById(R.id.buttonMenu);
+
+        button_Menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Main2Activity_menu.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
