@@ -34,7 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PaintTest" />
+        <activity android:name=".DrawingPack.PaintTest" />
         <activity android:name=".Main2Activity_menu"></activity>
     </application>
 
