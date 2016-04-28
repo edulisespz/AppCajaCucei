@@ -13,6 +13,9 @@ import android.view.View;
 public class DrawView extends View {
     Paint paint = new Paint();
 
+    int w;
+    int h;
+
     public DrawView(Context context) {
         super(context);
         paint.setColor(Color.BLACK);
@@ -20,8 +23,17 @@ public class DrawView extends View {
 
     @Override
     public void onDraw(Canvas canvas) {
-        canvas.drawLine(0, 0, 200, 200, paint);
-        canvas.drawLine(20, 0, 0, 20, paint);
+        w = canvas.getWidth();
+        h = canvas.getHeight();
+
+        int centerWx = w/2;
+        int centerHy = h/2;
+
+        //horizontal line
+        canvas.drawLine(centerWx - 50, centerHy, centerWx + 50, centerHy, paint);
+        //vertical line
+        canvas.drawLine(centerWx, centerHy - 50, centerWx, centerHy + 50, paint);
+
     }
 
 }
