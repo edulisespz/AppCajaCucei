@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">AppCajaCucei</string>
 
+    <string name="TestLang">Languaje in english</string>
+    <string name="TestLang2Key">English2</string>
 
 </resources>
