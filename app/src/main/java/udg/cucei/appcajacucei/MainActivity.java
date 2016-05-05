@@ -15,12 +15,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SelfNoteFragment noteFragment = SelfNoteFragment.newInstance();
-
-        android.support.v4.app.FragmentTransaction fragTransaction= this.getSupportFragmentManager().beginTransaction();
-        fragTransaction.replace(R.id.container, noteFragment);
-        fragTransaction.commit();
-
 
         Button boton =(Button) findViewById(R.id.button1);
 
@@ -58,6 +52,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Main2Activity_menu.class);
+                startActivity(intent);
+            }
+        });
+
+        Button button_Algoritm = (Button) findViewById(R.id.btnMathAlgo);
+
+        button_Algoritm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, EnterDataMathTest_Activity.class);
                 startActivity(intent);
             }
         });

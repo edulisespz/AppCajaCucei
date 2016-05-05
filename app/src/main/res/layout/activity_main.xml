@@ -12,7 +12,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center">
 
         <Button
             android:layout_width="wrap_content"
@@ -43,14 +44,14 @@
             android:id="@+id/buttonMenu"
             android:layout_gravity="center_horizontal" />
 
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true">
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AlgoritmTest"
+            android:id="@+id/btnMathAlgo"
+            android:layout_gravity="center_horizontal" />
 
-        </FrameLayout>
     </LinearLayout>
 
 
