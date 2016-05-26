@@ -31,21 +31,6 @@ public class EnterDataMathTest_Activity extends AppCompatActivity {
             }
         });
 
-        Button buttonLang = (Button) findViewById(R.id.button_lang);
 
-        buttonLang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Locale locale = new Locale("es");
-                Locale.setDefault(locale);
-                Configuration config = new Configuration();
-                config.locale = locale;
-                getBaseContext().getResources().updateConfiguration(config,
-                        getBaseContext().getResources().getDisplayMetrics());
-
-                Toast.makeText(getBaseContext(), "lenguaje actualizado",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }

@@ -17,42 +17,6 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="languajeTest"
-            android:id="@+id/button_lang"
-            android:layout_gravity="center_horizontal" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/TestLang"
-            android:id="@+id/textView2"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.09" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.09" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/TestLang2Key"
-            android:id="@+id/textView"
-            android:layout_gravity="center_horizontal" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.14" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Log_Test"
             android:id="@+id/btn_algoritmTest"
             android:layout_gravity="center_horizontal" />

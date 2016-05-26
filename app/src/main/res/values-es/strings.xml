@@ -3,4 +3,5 @@
     <string name="app_name">AppCajaCucei</string>
     <string name="TestLang">lenguaje en español</string>
     <string name="TestLang2Key">Español2</string>
+    <string name="Language_selected">Español esta selecionado</string>
 </resources>

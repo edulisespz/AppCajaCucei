@@ -3,5 +3,6 @@
 
     <string name="TestLang">Languaje in english</string>
     <string name="TestLang2Key">English2</string>
+    <string name="Language_selected">English is selected</string>
 
 </resources>
