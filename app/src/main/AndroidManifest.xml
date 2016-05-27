@@ -23,7 +23,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".PdfPrueba" />
+        <activity android:name=".PdfModule.PdfPrueba" />
         <activity android:name=".InstagramTest" />
         <activity
             android:name=".StarThings.SplashActivity"
@@ -34,7 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DrawingPack.PaintTest" />
+        <activity android:name=".DrawingModule.PaintTest" />
         <activity android:name=".Main2Activity_menu" />
         <activity android:name=".EnterDataMathTest_Activity" />
 

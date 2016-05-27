@@ -1,4 +1,4 @@
-package udg.cucei.appcajacucei.DrawingPack;
+package udg.cucei.appcajacucei.DrawingModule;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

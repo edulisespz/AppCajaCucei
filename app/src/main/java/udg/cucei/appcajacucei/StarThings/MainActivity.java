@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import udg.cucei.appcajacucei.DrawingPack.PaintTest;
+import udg.cucei.appcajacucei.DrawingModule.PaintTest;
 import udg.cucei.appcajacucei.EnterDataMathTest_Activity;
 import udg.cucei.appcajacucei.InstagramTest;
 import udg.cucei.appcajacucei.Main2Activity_menu;
-import udg.cucei.appcajacucei.PdfPrueba;
+import udg.cucei.appcajacucei.PdfModule.PdfPrueba;
 import udg.cucei.appcajacucei.R;
 
 public class MainActivity extends AppCompatActivity {

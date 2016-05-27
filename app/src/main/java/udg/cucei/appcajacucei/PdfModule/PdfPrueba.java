@@ -1,4 +1,4 @@
-package udg.cucei.appcajacucei;
+package udg.cucei.appcajacucei.PdfModule;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,6 +21,8 @@ import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import udg.cucei.appcajacucei.R;
 
 /**
  * Created by Edgar Ulises on 14/03/2016.
