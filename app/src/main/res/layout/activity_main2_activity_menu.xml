@@ -2,102 +2,140 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
+    android:layout_height="match_parent"
     tools:context="udg.cucei.appcajacucei.Main2Activity_menu"
-    android:background="@drawable/menu_pizza"
+    android:background="@drawable/activity_menu_fondo"
     android:weightSum="1"
     android:orientation="vertical">
 
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.13" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/gold_gift_box" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.26" />
-
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="103dp"
-        android:weightSum="1"
-        android:gravity="center_horizontal">
+        android:layout_height="match_parent"
+        android:layout_weight=".85">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton2"
-            android:src="@drawable/gold_gift_box" />
-
-        <Space
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.61" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton3"
-            android:src="@drawable/gold_gift_box" />
-
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="OYSTER PALLET"
+            android:id="@+id/textViewt_Title"
+            android:layout_gravity="top|center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="35dp"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.23" />
-
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="1"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.05">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton4"
-            android:src="@drawable/gold_gift_box" />
+        android:layout_height="match_parent"
+        android:background="@drawable/activity_menu_botones_pastel"
+        android:layout_weight=".40">
 
         <Space
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.61" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1.38" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:weightSum="1"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton_MenuDocument"
+                android:src="@drawable/activity_menu_documentos_menu"
+                android:scaleType="fitCenter"
+                android:layout_weight="0.18"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.23" />
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton_MenuBottle"
+                android:src="@drawable/activity_menu_envase_menu"
+                android:scaleType="fitCenter"
+                android:layout_weight="0.18"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="5dp" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.01" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:weightSum="1"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton_MenuCamion"
+                android:src="@drawable/activity_menu_contenedor_menu"
+                android:scaleType="fitCenter"
+                android:layout_weight="0.18"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.43" />
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton_MenuCaja"
+                android:src="@drawable/activity_menu_caja"
+                android:scaleType="fitCenter"
+                android:layout_weight="0.18"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="5dp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.16" />
 
         <ImageButton
             android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:id="@+id/imageButton_MenuPalette"
+            android:src="@drawable/activity_menu_tarima_menu"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_horizontal" />
+
+        <Space
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton5"
-            android:src="@drawable/gold_gift_box" />
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.24" />
     </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.08"
-        android:layout_gravity="center_horizontal" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton6"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/gold_gift_box" />
 
 </LinearLayout>

@@ -34,8 +34,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DrawingModule.PaintTest" />
-        <activity android:name=".Main2Activity_menu" />
+        <activity android:name=".DrawingModule.PaintTest"/>
+
+        <activity android:name=".Main2Activity_menu"
+                  android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
         <activity android:name=".EnterDataMathTest_Activity" />
 
         <activity android:name=".StarThings.AfterSplash_Language"
