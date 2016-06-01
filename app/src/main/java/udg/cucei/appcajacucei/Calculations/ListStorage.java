@@ -12,21 +12,49 @@ public class ListStorage extends ArrayList<Storage>{
     double constZ;
     //Int amountDesired
 
-    public int StorageKind(double E_x,double E_y,double E_z,
-                    double c_x,double c_y, double c_z, int elements){ // c = contenedor, e = elemento
+    public int StorageKind(int E_x,int E_y,int E_z,
+                           int c_x,int c_y, int c_z, int elements){ // c = contenedor, e = elemento
         int r=0;
 
-        double[] kind= new double[4];
+
+
+
+        /*
+        TODO: modify algoritm
+
+		        if(-1 || 0)
+
+        (c.x/e.x)(c.y/e.y)(c.z/e.z) //0
+        (c.x/e.y)(c.y/e.x)(c.z/e.z) //0
+
+                if(-1 || 1)
+        (c.x/e.x)(c.y/e.z)(c.z/e.y)//1
+        (c.x/e.z)(c.y/e.x)(c.z/e.y)//1
+
+                if(-1 || 2)
+        (c.x/e.y)(c.y/e.z)(c.z/e.x)// 2
+        (c.x/e.z)(c.y/e.y)(c.z/e.x)// 2
+
+        ---
+
+         */
+
+        int[] kind= new int[4];
         kind[0]= (c_x/E_x) * (c_y/E_y) * (c_z/E_z);
         kind[1]= (c_x/E_y) * (c_y/E_x) * (c_z/E_z);
         kind[2]= (c_x/E_x) * (c_y/E_z) * (c_z/E_y);
+
+        kind[2]= (c_x/E_z) * (c_y/E_x) * (c_z/E_y);
+
         kind[3]= (c_x/E_y) * (c_y/E_z) * (c_z/E_x);
 
-        double kind_F=0;
-        double aux=0;
+        int kind_F=0;
+        int aux=0;
+
         for(int x=0; x<kind.length; x++){
             if(aux< kind[x]){
                 aux=kind[x];
+
             }
         }
         kind_F= aux;

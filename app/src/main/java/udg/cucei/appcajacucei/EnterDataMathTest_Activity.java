@@ -24,7 +24,7 @@ public class EnterDataMathTest_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ListStorage box = new ListStorage();
-                int result= box.StorageKind(100,100,100,1000,1000,1000,1);
+                int result= box.StorageKind(10,5,10,100,15,10,1);
 
                 Log.d("result", String.valueOf(result));
 
