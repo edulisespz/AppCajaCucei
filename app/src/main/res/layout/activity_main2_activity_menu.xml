@@ -54,7 +54,7 @@
                 android:src="@drawable/activity_menu_documentos_menu"
                 android:scaleType="fitCenter"
                 android:layout_weight="0.18"
-                android:background="@android:color/transparent"
+                android:background="?android:selectableItemBackground"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp" />
 
@@ -70,7 +70,7 @@
                 android:src="@drawable/activity_menu_envase_menu"
                 android:scaleType="fitCenter"
                 android:layout_weight="0.18"
-                android:background="@android:color/transparent"
+                android:background="?android:selectableItemBackground"
                 android:layout_marginBottom="5dp" />
 
         </LinearLayout>
@@ -95,7 +95,7 @@
                 android:src="@drawable/activity_menu_contenedor_menu"
                 android:scaleType="fitCenter"
                 android:layout_weight="0.18"
-                android:background="@android:color/transparent"
+                android:background="?android:selectableItemBackground"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp" />
 
@@ -111,7 +111,7 @@
                 android:src="@drawable/activity_menu_caja"
                 android:scaleType="fitCenter"
                 android:layout_weight="0.18"
-                android:background="@android:color/transparent"
+                android:background="?android:selectableItemBackground"
                 android:layout_marginBottom="5dp" />
         </LinearLayout>
 
@@ -122,12 +122,12 @@
             android:layout_weight="0.16" />
 
         <ImageButton
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="80dp"
             android:id="@+id/imageButton_MenuPalette"
             android:src="@drawable/activity_menu_tarima_menu"
             android:scaleType="fitCenter"
-            android:background="@android:color/transparent"
+            android:background="?android:selectableItemBackground"
             android:layout_marginBottom="5dp"
             android:layout_gravity="center_horizontal" />
 

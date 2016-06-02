@@ -24,12 +24,16 @@ public class EnterDataMathTest_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ListStorage box = new ListStorage();
-                int result= box.StorageKind(10,5,10,100,15,10,1);
+                int result= box.StorageKind(10,5,10,100,15,10,1,-1);
 
                 Log.d("result", String.valueOf(result));
 
             }
         });
+
+        // TODO: remove after fixing the algoritm
+        buttonTest.setAlpha(.5f);
+        buttonTest.setClickable(false);
 
 
     }

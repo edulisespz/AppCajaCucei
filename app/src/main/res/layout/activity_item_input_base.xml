@@ -11,12 +11,13 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="1">
+        android:layout_height="0dp"
+        android:weightSum="1"
+        android:layout_weight=".1">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="match_parent"
             android:id="@+id/imageView"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
@@ -28,14 +29,53 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="0.78">
 
-        <fragment
+        <FrameLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:name="udg.cucei.appcajacucei.InputModule.ItemSize"
-            android:id="@+id/fragment_Holder"
-            class="udg.cucei.appcajacucei.InputModule.ItemSize"/>
+            android:layout_height="match_parent"
+            android:id="@+id/fragment_Holder"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="bottom|center"
+        android:weightSum="1"
+        android:layout_weight="0.12"
+        android:paddingBottom="5dp">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/ImgBtnAnt"
+            android:layout_weight=".2"
+            android:src="@drawable/input_module_anterior"
+            android:scaleType="fitXY"
+            android:background="?android:selectableItemBackground"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.52" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/ImgBtnSig"
+            android:layout_weight=".2"
+            android:scaleType="fitXY"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/input_module_siguiente"
+            android:paddingRight="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
     </LinearLayout>
 
 
