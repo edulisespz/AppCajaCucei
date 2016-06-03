@@ -9,13 +9,15 @@ import android.widget.ImageButton;
 
 import udg.cucei.appcajacucei.R;
 
-public class ItemInputBase extends AppCompatActivity {
+public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData {
+
+    StateMachine machine;//TODO: implement the min and the present state
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_input_base);
-
 
         if (findViewById(R.id.fragment_Holder) != null) {
             if (savedInstanceState != null) {
@@ -24,8 +26,9 @@ public class ItemInputBase extends AppCompatActivity {
             Frag_ItemSize item_size = new Frag_ItemSize();
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_Holder, item_size).commit();
-
         }
+
+
 
         // check this:   http://stackoverflow.com/questions/24371007/get-fragments-edittext-values-on-activity-button-click-event
 
@@ -33,6 +36,9 @@ public class ItemInputBase extends AppCompatActivity {
         BTNnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
 
                 Frag_BoxSize box_size = new Frag_BoxSize();
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -55,8 +61,20 @@ public class ItemInputBase extends AppCompatActivity {
             }
         });
 
+    }// end onCreate
 
 
+    // Interface Functions
+    public void getAlto(int alto){
 
     }
+
+    public void geDataSizes(int alto, int ancho, int Grueso, int peso ){
+
+    }
+
+
+
+
+
 }
