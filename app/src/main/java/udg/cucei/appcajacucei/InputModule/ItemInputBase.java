@@ -27,6 +27,8 @@ public class ItemInputBase extends AppCompatActivity {
 
         }
 
+        // check this:   http://stackoverflow.com/questions/24371007/get-fragments-edittext-values-on-activity-button-click-event
+
         ImageButton BTNnext = (ImageButton) findViewById(R.id.ImgBtnSig);
         BTNnext.setOnClickListener(new View.OnClickListener() {
             @Override

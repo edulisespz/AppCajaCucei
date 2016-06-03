@@ -15,7 +15,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.90" />
 
@@ -34,7 +34,9 @@
                 android:text="English"
                 android:id="@+id/textViewEnglish"
                 android:layout_weight="0.09"
-                android:clickable="true"/>
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -46,9 +48,11 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Español"
+                android:background="?android:selectableItemBackground"
                 android:id="@+id/textViewEspanol"
                 android:layout_weight="0.09"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:gravity="center" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
