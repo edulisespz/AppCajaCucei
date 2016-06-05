@@ -4,6 +4,7 @@ package udg.cucei.appcajacucei.InputModule;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -18,6 +19,8 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_input_base);
+
+        machine=new StateMachine();
 
         if (findViewById(R.id.fragment_Holder) != null) {
             if (savedInstanceState != null) {
@@ -65,12 +68,15 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
 
     // Interface Functions
-    public void getAlto(int alto){
-
+    public void getItemAlto(int alto){
+        machine.itemAlto= alto;
     }
 
     public void geDataSizes(int alto, int ancho, int Grueso, int peso ){
-
+        machine.itemAlto= alto;
+        machine.itemAncho= ancho;
+        Log.d("itemTest","alto: "+ Integer.toString(alto));
+        Log.d("itemTest","ancho: "+ Integer.toString(ancho));
     }
 
 

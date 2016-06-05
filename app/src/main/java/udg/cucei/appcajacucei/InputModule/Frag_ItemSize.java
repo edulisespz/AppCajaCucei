@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 
@@ -17,6 +20,9 @@ public class Frag_ItemSize extends Fragment {
 
     boolean isVertical;
     ImageView btnOrientation;
+
+    EditText editAlto;
+    EditText editAncho;
 
     IntefaceData intf_DataCallBack;
 
@@ -42,6 +48,12 @@ public class Frag_ItemSize extends Fragment {
             }
         });
 
+        editAlto = (EditText)rootView.findViewById(R.id.item_editText_Alto);
+        editAlto.addTextChangedListener(mTextEditorWatcher);
+
+        editAncho= (EditText)rootView.findViewById(R.id.item_editText_Ancho);
+        editAncho.addTextChangedListener(mTextEditorWatcher);
+
 
 
 
@@ -51,9 +63,32 @@ public class Frag_ItemSize extends Fragment {
         return rootView;
     }
 
+
+    private final TextWatcher  mTextEditorWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+            int item_alto= checkData( editAlto.getText().toString() );
+            int item_ancho= checkData( editAncho.getText().toString() );
+
+
+            intf_DataCallBack.geDataSizes(item_alto,item_ancho,0,0);
+        }
+    };
+
     public interface IntefaceData{
         public void geDataSizes(int alto, int ancho, int Grueso, int peso );
-        public void getAlto(int alto);
+        public void getItemAlto(int alto);
     }
 
 
@@ -86,5 +121,16 @@ public class Frag_ItemSize extends Fragment {
                         public void getAlto( edittextAlto.toint() ); //something like that
                     }
      */
+
+
+    private int checkData(String strVal){
+        if( strVal.equals("") ){//fuck you Java, in C# this is the other way around
+            return -1;
+        }else{
+            return Integer.parseInt(strVal);
+        }
+    }
+
+
 
 }
