@@ -82,13 +82,12 @@ public class Frag_ItemSize extends Fragment {
             int item_ancho= checkData( editAncho.getText().toString() );
 
 
-            intf_DataCallBack.geDataSizes(item_alto,item_ancho,0,0);
+            intf_DataCallBack.geDataSizes(item_alto,item_ancho,0,0);//TODO: set the rest of values
         }
     };
 
     public interface IntefaceData{
         public void geDataSizes(int alto, int ancho, int Grueso, int peso );
-        public void getItemAlto(int alto);
     }
 
 
@@ -124,7 +123,7 @@ public class Frag_ItemSize extends Fragment {
 
 
     private int checkData(String strVal){
-        if( strVal.equals("") ){//fuck you Java, in C# this is the other way around
+        if( strVal.equals("") ){//fuck you Java, in C# this is the other way around strinf1==strin2
             return -1;
         }else{
             return Integer.parseInt(strVal);

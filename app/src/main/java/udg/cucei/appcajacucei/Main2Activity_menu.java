@@ -21,6 +21,17 @@ public class Main2Activity_menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Main2Activity_menu.this, ItemInputBase.class);
+                intent.putExtra("state",0); // send the initial state
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btnBox = (ImageButton)findViewById(R.id.imageButton_MenuCaja);
+        btnBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main2Activity_menu.this, ItemInputBase.class);
+                intent.putExtra("state",1);
                 startActivity(intent);
             }
         });
