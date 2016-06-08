@@ -36,7 +36,8 @@
                 android:layout_weight="0.09"
                 android:background="?android:selectableItemBackground"
                 android:clickable="true"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="22sp"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -52,7 +53,8 @@
                 android:id="@+id/textViewEspanol"
                 android:layout_weight="0.09"
                 android:clickable="true"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="22sp" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

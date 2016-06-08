@@ -7,12 +7,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+
 
 import udg.cucei.appcajacucei.R;
 
-public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData {
+public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData,Frag_BoxSize.IntefaceData_Box {
 
-    StateMachine machine;//TODO: implement the min and the present state
+    StateMachine machine;
+    ImageView ProgresBar;
+
+    ImageButton BTNnext;
+    ImageButton BTNprev;
 
 
     @Override
@@ -21,6 +27,10 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
         setContentView(R.layout.activity_item_input_base);
 
         machine=new StateMachine();
+
+        ProgresBar=(ImageView)findViewById(R.id.imageView_bar);
+        BTNnext = (ImageButton) findViewById(R.id.ImgBtnSig);
+        BTNprev = (ImageButton) findViewById(R.id.ImgBtnAnt);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -33,16 +43,19 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
             if (savedInstanceState != null) {
                 return;
             }
-            switch (machine.presentState) {
+            switch (machine.minState) {
                 case 0:
                     Frag_ItemSize item_size = new Frag_ItemSize();
                     getSupportFragmentManager().beginTransaction()
                             .add(R.id.fragment_Holder, item_size).commit();// initialize item frag
+                    BTNprev.setVisibility(View.INVISIBLE);
                     break;
                 case 1:
                     Frag_BoxSize boxSize = new Frag_BoxSize();
                     getSupportFragmentManager().beginTransaction()
                             .add(R.id.fragment_Holder, boxSize).commit();// initialize box frag
+                    ProgresBar.setImageResource(R.drawable.input_module_barra_50);
+                    BTNprev.setVisibility(View.INVISIBLE);
                     break;
             }
         }
@@ -54,7 +67,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
         // check this:   http://stackoverflow.com/questions/24371007/get-fragments-edittext-values-on-activity-button-click-event
 
         //State Machine Implementation
-        ImageButton BTNnext = (ImageButton) findViewById(R.id.ImgBtnSig);
+
         BTNnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +79,8 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.fragment_Holder, box_size);
                         transaction.commit();
+                        ProgresBar.setImageResource(R.drawable.input_module_barra_50);
+                        BTNprev.setVisibility(View.VISIBLE);
 
                         machine.presentState=1;
                         break;
@@ -80,22 +95,24 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
             }
         });
 
-        ImageButton BTNprev = (ImageButton) findViewById(R.id.ImgBtnAnt);
+
         BTNprev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(machine.presentState==0 && machine.minState>= machine.presentState){
+                if(machine.presentState==0 && machine.minState<= machine.presentState-1){
+                    //this wold never do nothing, i just write it for better code understanding
 
-
-                }else if(machine.presentState==1 && machine.minState>= machine.presentState){ //TODO: chek >= OR > for the validation
+                }else if(machine.presentState==1 && machine.minState<= machine.presentState-1){ //TODO: chek <= OR < for the validation
                     Frag_ItemSize item_size = new Frag_ItemSize();
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_Holder, item_size);
                     transaction.commit();
+                    ProgresBar.setImageResource(R.drawable.input_module_barra);
+                    BTNprev.setVisibility(View.INVISIBLE);
 
                     machine.presentState=0;
-                }else if(machine.presentState==2 && machine.minState>= machine.presentState){
+                }else if(machine.presentState==2 && machine.minState>= machine.presentState-1){
 
                 }
 
@@ -106,11 +123,25 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
 
     // Interface Functions
-    public void geDataSizes(int alto, int ancho, int Grueso, int peso ){
+    public void geDataSizes_Item(int alto, int ancho, int Grueso, int peso,boolean orientation ){
         machine.itemAlto= alto;
         machine.itemAncho= ancho;
-        Log.d("itemTest","alto: "+ Integer.toString(alto));
-        Log.d("itemTest","ancho: "+ Integer.toString(ancho));
+        machine.itemGrosor= Grueso;
+        machine.itempeso=peso;
+        machine.itemOreintation=orientation;
+
+        Log.d("itemTest", "alto: " + Integer.toString(alto));
+        Log.d("itemTest", "ancho: " + Integer.toString(ancho));
+    }
+
+
+    public void geDataSizes_Box(int alto, int ancho, int Grueso, int peso){
+
+        machine.boxAlto=alto;
+        machine.boxAncho=ancho;
+        machine.boxGrosor=Grueso;
+        machine.boxPeso=peso;
+
     }
 
 

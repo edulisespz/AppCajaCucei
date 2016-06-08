@@ -14,5 +14,10 @@ public class StateMachine {
     int itempeso;
     boolean itemOreintation;
 
+    int boxAlto;
+    int boxAncho;
+    int boxGrosor;
+    int boxPeso;
+
     //TODO: put the rest of sizes
 }

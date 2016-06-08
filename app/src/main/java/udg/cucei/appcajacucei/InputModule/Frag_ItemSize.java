@@ -18,11 +18,14 @@ import udg.cucei.appcajacucei.R;
 
 public class Frag_ItemSize extends Fragment {
 
-    boolean isVertical;
+
     ImageView btnOrientation;
 
     EditText editAlto;
     EditText editAncho;
+    EditText editGrosor;
+    EditText editPeso;
+    boolean  isVertical;
 
     IntefaceData intf_DataCallBack;
 
@@ -54,6 +57,12 @@ public class Frag_ItemSize extends Fragment {
         editAncho= (EditText)rootView.findViewById(R.id.item_editText_Ancho);
         editAncho.addTextChangedListener(mTextEditorWatcher);
 
+        editGrosor= (EditText)rootView.findViewById(R.id.item_editText_Grosor);
+        editGrosor.addTextChangedListener(mTextEditorWatcher);
+
+        editPeso= (EditText)rootView.findViewById(R.id.item_editText_Peso);
+        editPeso.addTextChangedListener(mTextEditorWatcher);
+
 
 
 
@@ -80,14 +89,16 @@ public class Frag_ItemSize extends Fragment {
 
             int item_alto= checkData( editAlto.getText().toString() );
             int item_ancho= checkData( editAncho.getText().toString() );
+            int item_grueso=checkData( editGrosor.getText().toString() );
+            int item_peso= checkData( editPeso.getText().toString() );
 
 
-            intf_DataCallBack.geDataSizes(item_alto,item_ancho,0,0);//TODO: set the rest of values
+            intf_DataCallBack.geDataSizes_Item(item_alto, item_ancho, item_grueso, item_peso, isVertical);
         }
     };
 
     public interface IntefaceData{
-        public void geDataSizes(int alto, int ancho, int Grueso, int peso );
+        public void geDataSizes_Item(int alto, int ancho, int Grueso, int peso,boolean orientation );
     }
 
 
@@ -104,22 +115,6 @@ public class Frag_ItemSize extends Fragment {
                     + " must implement IntefaceData");
         }
     }
-
-    /*example for call the interface
-    public void onListItemClick( int position) {
-        // Send the event to the host activity
-        intf_DataCallBack.getAlto(position);
-    }
-    */
-
-    //http://www.learn-android-easily.com/2013/06/using-textwatcher-in-android.html
-    //TODO: sent,get the values with TextWatcher
-    /*
-    public void afterTextChanged(Editable s)
-                    {
-                        public void getAlto( edittextAlto.toint() ); //something like that
-                    }
-     */
 
 
     private int checkData(String strVal){
