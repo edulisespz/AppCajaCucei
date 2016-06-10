@@ -9,14 +9,17 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 
 import udg.cucei.appcajacucei.R;
 
 
-public class Frag_ItemSize extends Fragment {
+public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelectedListener {
 
 
     ImageView btnOrientation;
@@ -27,6 +30,7 @@ public class Frag_ItemSize extends Fragment {
     EditText editPeso;
     boolean  isVertical;
 
+    Spinner mySpinner;
     IntefaceData intf_DataCallBack;
 
     @Override
@@ -35,6 +39,9 @@ public class Frag_ItemSize extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_item_size, container, false);
 
         btnOrientation = (ImageView) rootView.findViewById(R.id.imageViewOrientation);
+        mySpinner=(Spinner)rootView.findViewById(R.id.spinner);
+        mySpinner.setAdapter(new MySpinnerAdapter() );
+        mySpinner.setOnItemClickListener(this);
 
         isVertical= true;
         btnOrientation.setOnClickListener(new View.OnClickListener() {
@@ -62,11 +69,6 @@ public class Frag_ItemSize extends Fragment {
 
         editPeso= (EditText)rootView.findViewById(R.id.item_editText_Peso);
         editPeso.addTextChangedListener(mTextEditorWatcher);
-
-
-
-
-
 
 
         return rootView;
@@ -122,6 +124,72 @@ public class Frag_ItemSize extends Fragment {
             return -1;
         }else{
             return Integer.parseInt(strVal);
+        }
+    }
+
+
+
+    //things for the spiner---------------------------
+    @Override
+    public void onItemSelected(AdapterView<?> parent,
+                               View view, int position, long id) {
+        Toast.makeText(this, "Selected: "
+                + position, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+//        nothing selected
+    }
+
+    private static class ViewHolder {
+        ImageView imageViewEmoticon;
+    }
+
+    //    our custom list adapter
+    private class MySpinnerAdapter extends BaseAdapter {
+
+        public int getCount() {
+            return emoticons.length;
+        }
+
+        @Override
+        public Integer getItem(int position) {
+            return emoticons[position];
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View itemView = convertView;
+            ViewHolder emoticonViewHolder;
+//            do we have a view
+            if (convertView == null) {
+//              we don't have a view so create one by inflating the layout
+                itemView = getLayoutInflater()
+                        .inflate(R.layout.spinner_row, parent, false);
+
+                emoticonViewHolder = new ViewHolder();
+                emoticonViewHolder.imageViewEmoticon
+                        = (ImageView) itemView.findViewById(R.id.spinnerImage);
+//              set the tag for this view to the current image view holder
+                itemView.setTag(emoticonViewHolder);
+
+            } else {
+//              we have a view so get the tagged view
+                emoticonViewHolder = (ViewHolder) itemView.getTag();
+            }
+
+//          display the current  image
+            emoticonViewHolder.imageViewEmoticon
+                    .setImageDrawable(getResources()
+                            .getDrawable(emoticons[position]));
+
+            return itemView;
         }
     }
 

@@ -10,7 +10,7 @@
 
 
     <EditText
-        android:layout_width="200dp"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
@@ -27,7 +27,7 @@
         android:layout_weight="0.07" />
 
     <EditText
-        android:layout_width="200dp"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
@@ -43,7 +43,7 @@
         android:layout_weight="0.07" />
 
     <EditText
-        android:layout_width="200dp"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
