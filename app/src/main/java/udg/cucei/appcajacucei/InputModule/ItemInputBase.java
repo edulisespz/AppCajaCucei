@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 
 import udg.cucei.appcajacucei.R;
@@ -20,6 +21,8 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
     ImageButton BTNnext;
     ImageButton BTNprev;
 
+    LinearLayout InputBaseBackGround;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +32,11 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
         machine=new StateMachine();
 
         ProgresBar=(ImageView)findViewById(R.id.imageView_bar);
+        InputBaseBackGround = (LinearLayout)findViewById(R.id.Activity_itemBase_Layout);
         BTNnext = (ImageButton) findViewById(R.id.ImgBtnSig);
         BTNprev = (ImageButton) findViewById(R.id.ImgBtnAnt);
+
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -55,6 +61,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     getSupportFragmentManager().beginTransaction()
                             .add(R.id.fragment_Holder, boxSize).commit();// initialize box frag
                     ProgresBar.setImageResource(R.drawable.input_module_barra_50);
+                    InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_caja_master);
                     BTNprev.setVisibility(View.INVISIBLE);
                     break;
             }
@@ -80,6 +87,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                         transaction.replace(R.id.fragment_Holder, box_size);
                         transaction.commit();
                         ProgresBar.setImageResource(R.drawable.input_module_barra_50);
+                        InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_caja_master);
                         BTNprev.setVisibility(View.VISIBLE);
 
                         machine.presentState=1;
@@ -109,6 +117,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     transaction.replace(R.id.fragment_Holder, item_size);
                     transaction.commit();
                     ProgresBar.setImageResource(R.drawable.input_module_barra);
+                    InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_caja);
                     BTNprev.setVisibility(View.INVISIBLE);
 
                     machine.presentState=0;
@@ -123,15 +132,17 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
 
     // Interface Functions
-    public void geDataSizes_Item(int alto, int ancho, int Grueso, int peso,boolean orientation ){
+    public void geDataSizes_Item(int alto, int ancho, int Grueso, int peso,boolean orientation, boolean MetricSys ){
         machine.itemAlto= alto;
         machine.itemAncho= ancho;
         machine.itemGrosor= Grueso;
         machine.itempeso=peso;
         machine.itemOreintation=orientation;
+        machine.Item_MetricSys= MetricSys;
 
         Log.d("itemTest", "alto: " + Integer.toString(alto));
         Log.d("itemTest", "ancho: " + Integer.toString(ancho));
+        Log.d("item Metric", String.valueOf(MetricSys));
     }
 
 
@@ -142,6 +153,20 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
         machine.boxGrosor=Grueso;
         machine.boxPeso=peso;
 
+    }
+
+    public void ScrollViewChanger(String itemSelcted){
+        machine.itemTipe = itemSelcted;
+        if(itemSelcted.equals("square")){
+            InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_caja);
+        }else if(itemSelcted.equals("cilinder")){
+            InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_lata);
+        }else{
+            //bottle backgroun TODO: set frasco bacground
+
+        }
+
+        Log.d("itemType: ", itemSelcted);
     }
 
 

@@ -6,20 +6,29 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Switch;
 
 
 import udg.cucei.appcajacucei.R;
 
 
 public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelectedListener {
+
+    private static final Integer[] Scroll_options = {
+            R.drawable.frag_item_scroll_caja_opt0,
+            R.drawable.frag_item_scroll_caja_opt1
+            ,R.drawable.frag_item_scroll_caja_opt2
+    };
 
 
     ImageView btnOrientation;
@@ -31,6 +40,7 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
     boolean  isVertical;
 
     Spinner mySpinner;
+    Switch swtchMetricSys;
     IntefaceData intf_DataCallBack;
 
     @Override
@@ -39,9 +49,12 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
         View rootView = inflater.inflate(R.layout.fragment_item_size, container, false);
 
         btnOrientation = (ImageView) rootView.findViewById(R.id.imageViewOrientation);
+        swtchMetricSys = (Switch) rootView.findViewById(R.id.switchUnitSystem);
         mySpinner=(Spinner)rootView.findViewById(R.id.spinner);
-        mySpinner.setAdapter(new MySpinnerAdapter() );
-        mySpinner.setOnItemClickListener(this);
+        mySpinner.setAdapter(new MySpinnerAdapter());
+        mySpinner.setOnItemSelectedListener(this);
+
+
 
         isVertical= true;
         btnOrientation.setOnClickListener(new View.OnClickListener() {
@@ -95,12 +108,16 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
             int item_peso= checkData( editPeso.getText().toString() );
 
 
-            intf_DataCallBack.geDataSizes_Item(item_alto, item_ancho, item_grueso, item_peso, isVertical);
+            intf_DataCallBack.geDataSizes_Item(item_alto, item_ancho,
+                    item_grueso, item_peso, isVertical, swtchMetricSys.isChecked() );
         }
     };
 
+
+
     public interface IntefaceData{
-        public void geDataSizes_Item(int alto, int ancho, int Grueso, int peso,boolean orientation );
+        void geDataSizes_Item(int alto, int ancho, int Grueso, int peso,boolean orientation,boolean MetricSys );
+        void ScrollViewChanger(String itemSelcted);
     }
 
 
@@ -131,31 +148,56 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
 
     //things for the spiner---------------------------
     @Override
-    public void onItemSelected(AdapterView<?> parent,
-                               View view, int position, long id) {
-        Toast.makeText(this, "Selected: "
-                + position, Toast.LENGTH_SHORT).show();
+    public void onItemSelected(AdapterView<?> parent,View view, int position, long id) {
+        Log.d("selected", Integer.toString(position));
+
+        switch (position){
+            case 0:
+                editAncho.setHint("ANCHO");
+                editGrosor.setHint("GROSOR");
+                editPeso.setHint("PESO");
+                editGrosor.setVisibility(View.VISIBLE);
+
+                intf_DataCallBack.ScrollViewChanger("square");
+                break;
+            case 1:
+                editAncho.setHint("DIAMETRO");
+                editPeso.setHint("CANTIDAD");
+                editGrosor.setVisibility(View.GONE);
+
+                intf_DataCallBack.ScrollViewChanger("cilinder");
+                break;
+            case 2:
+                editAncho.setHint("RADIO MAYOR");
+                editGrosor.setHint("RADIO MENOR");
+                editPeso.setHint("PESO");
+                editGrosor.setVisibility(View.VISIBLE);
+
+                intf_DataCallBack.ScrollViewChanger("bottle");
+                break;
+        }
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-//        nothing selected
+        //nothing selected
     }
 
     private static class ViewHolder {
-        ImageView imageViewEmoticon;
+        ImageView imageView_icon;
     }
 
     //    our custom list adapter
     private class MySpinnerAdapter extends BaseAdapter {
 
         public int getCount() {
-            return emoticons.length;
+            return Scroll_options.length;
         }
 
         @Override
         public Integer getItem(int position) {
-            return emoticons[position];
+            return Scroll_options[position];
         }
 
         @Override
@@ -170,11 +212,11 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
 //            do we have a view
             if (convertView == null) {
 //              we don't have a view so create one by inflating the layout
-                itemView = getLayoutInflater()
+                itemView = getActivity().getLayoutInflater()
                         .inflate(R.layout.spinner_row, parent, false);
 
                 emoticonViewHolder = new ViewHolder();
-                emoticonViewHolder.imageViewEmoticon
+                emoticonViewHolder.imageView_icon
                         = (ImageView) itemView.findViewById(R.id.spinnerImage);
 //              set the tag for this view to the current image view holder
                 itemView.setTag(emoticonViewHolder);
@@ -185,9 +227,9 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
             }
 
 //          display the current  image
-            emoticonViewHolder.imageViewEmoticon
+            emoticonViewHolder.imageView_icon
                     .setImageDrawable(getResources()
-                            .getDrawable(emoticons[position]));
+                            .getDrawable(Scroll_options[position]));
 
             return itemView;
         }

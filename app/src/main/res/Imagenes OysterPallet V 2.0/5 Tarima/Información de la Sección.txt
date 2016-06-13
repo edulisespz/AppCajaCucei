@@ -1,0 +1,8 @@
+En este apartado, la imagen MaquetaTamaños es para sólo tomar la referencia de los tamaños de cada tarima.
+
+De igual forma, la imagen MaquetaDatos, solo es referencial para indicar como se mostrarán los datos.
+
+La estructura de la imagen MaquetaTarima es la que se debe utilizar para la sección.
+
+Tanto en este apartado, como en el del contenedor, los botones no permitirán al usuario el ingreso de datos.
+Sólo se mostrarán de acuerdo a la selección del tamaño de la tarima.
