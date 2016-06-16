@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import udg.cucei.appcajacucei.R;
 
@@ -22,6 +23,8 @@ public class Frag_BoxSize extends Fragment {
     EditText editAncho;
     EditText editGrosor;
     EditText editPeso;
+    boolean isAmarre;
+    ImageView btnAmarre;
 
     public Frag_BoxSize() {
         // Required empty public constructor
@@ -47,6 +50,25 @@ public class Frag_BoxSize extends Fragment {
 
         editPeso= (EditText)rootView.findViewById(R.id.box_editText_Peso);
         editPeso.addTextChangedListener(mTextEditorWatcher);
+
+        btnAmarre=(ImageView)rootView.findViewById(R.id.imageButtonAmarre);
+
+
+        isAmarre= false;
+        btnAmarre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isAmarre){
+                    btnAmarre.setImageResource(R.drawable.input_module_caja_master_desamarre);
+                    isAmarre= false;
+                }else {
+                    btnAmarre.setImageResource(R.drawable.input_module_caja_master_amarre);
+                    isAmarre=true;
+                }
+
+                intf_DataCallBack_Box.getIsAmarred_Box(isAmarre);
+            }
+        });
 
 
 
@@ -80,6 +102,7 @@ public class Frag_BoxSize extends Fragment {
 
     public interface IntefaceData_Box{
         public void geDataSizes_Box(int alto, int ancho, int Grueso, int peso);
+        public void getIsAmarred_Box(boolean isAmarred);
     }
 
     @Override

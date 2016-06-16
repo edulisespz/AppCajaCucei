@@ -1,0 +1,6 @@
+Para el caso de las vistas, las imágenes "FrascoVertical" y "LataVertical" se pueden utilizar en ambas vistas laterales
+y en el empaquetado, que es la imagen que viene en la parte baja con los envases y la caja.
+
+Para la caja, las imágenes "CajaLateral1" y "CajaLateral2" se usarán de acuerdo al algoritmo en las vistas laterales,
+la imagen "CajaSuperior" se usará en la vista superior y la imagen "CajaEmpaquetado" es la que se usará para el montaje
+del empaquetado.

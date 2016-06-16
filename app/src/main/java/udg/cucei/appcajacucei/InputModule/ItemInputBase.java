@@ -145,6 +145,11 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
         Log.d("item Metric", String.valueOf(MetricSys));
     }
 
+    public void getMetricSys_Item(boolean MetricSystem){
+        machine.Item_MetricSys=MetricSystem;
+        Log.d("item Metric Callback", String.valueOf(MetricSystem));
+    }
+
 
     public void geDataSizes_Box(int alto, int ancho, int Grueso, int peso){
 
@@ -155,6 +160,11 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
     }
 
+    public void getIsAmarred_Box(boolean isAmarred){
+        machine.boxAmarred = isAmarred;
+        Log.d("is amarred", Boolean.toString(isAmarred) );
+    }
+
     public void ScrollViewChanger(String itemSelcted){
         machine.itemTipe = itemSelcted;
         if(itemSelcted.equals("square")){
@@ -162,8 +172,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
         }else if(itemSelcted.equals("cilinder")){
             InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_lata);
         }else{
-            //bottle backgroun TODO: set frasco bacground
-
+            InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_bottle);
         }
 
         Log.d("itemType: ", itemSelcted);

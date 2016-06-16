@@ -21,12 +21,14 @@ public class StateMachine {
     int boxAncho;
     int boxGrosor;
     int boxPeso;
+    boolean boxAmarred;
 
 
 
 
     public StateMachine(){
         Item_MetricSys=false;
+        boxAmarred=false;
 
         itemTipe="square";
         itemOreintation=true;

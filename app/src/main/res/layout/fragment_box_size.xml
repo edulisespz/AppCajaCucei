@@ -5,9 +5,61 @@
     android:layout_height="match_parent"
     tools:context=".InputModule.Frag_ItemSize"
     android:weightSum="1"
-    android:gravity="bottom"
     android:paddingBottom="10dp">
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.13"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/imageView"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/input_module_caja_master_icono" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="DIMENSIONES"
+            android:id="@+id/textView3"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fcfcfc" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/imageButtonAmarre"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/input_module_caja_master_desamarre" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="INTERNAS"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.55" />
 
     <EditText
         android:layout_width="175dp"
@@ -24,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.07" />
+        android:layout_weight="0.1" />
 
     <EditText
         android:layout_width="175dp"
@@ -40,7 +92,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.07" />
+        android:layout_weight="0.1" />
 
     <EditText
         android:layout_width="175dp"

@@ -49,7 +49,10 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
         View rootView = inflater.inflate(R.layout.fragment_item_size, container, false);
 
         btnOrientation = (ImageView) rootView.findViewById(R.id.imageViewOrientation);
+
         swtchMetricSys = (Switch) rootView.findViewById(R.id.switchUnitSystem);
+
+
         mySpinner=(Spinner)rootView.findViewById(R.id.spinner);
         mySpinner.setAdapter(new MySpinnerAdapter());
         mySpinner.setOnItemSelectedListener(this);
@@ -68,6 +71,14 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
                     isVertical=true;
                 }
 
+            }
+        });
+
+        swtchMetricSys.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                intf_DataCallBack.getMetricSys_Item(isChecked);
             }
         });
 
@@ -117,6 +128,7 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
 
     public interface IntefaceData{
         void geDataSizes_Item(int alto, int ancho, int Grueso, int peso,boolean orientation,boolean MetricSys );
+        void getMetricSys_Item(boolean MetricSystem);
         void ScrollViewChanger(String itemSelcted);
     }
 
