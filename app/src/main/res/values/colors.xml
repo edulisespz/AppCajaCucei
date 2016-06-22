@@ -7,5 +7,6 @@
     <color name="colorblack_selected">#595959</color>
     <color name="transparent">#ccbfbfbf</color>
     <color name="gray">#a6a6a6</color>
+    <color name="MaquetaBackgroundColor">#2d353a</color>
 
 </resources>

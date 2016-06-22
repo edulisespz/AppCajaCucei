@@ -1,6 +1,9 @@
 package udg.cucei.appcajacucei.InputModule;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,9 +14,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 
+import udg.cucei.appcajacucei.OutputModule.Frag_Maqueta;
+import udg.cucei.appcajacucei.OutputModule.ReportActivity;
 import udg.cucei.appcajacucei.R;
 
-public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData,Frag_BoxSize.IntefaceData_Box {
+public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData,Frag_BoxSize.IntefaceData_Box,Frag_McKee.Inteface_Data_McKee {
 
     StateMachine machine;
     ImageView ProgresBar;
@@ -22,6 +27,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
     ImageButton BTNprev;
 
     LinearLayout InputBaseBackGround;
+    FragmentTransaction transaction;
 
 
     @Override
@@ -75,15 +81,19 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
         //State Machine Implementation
 
+
         BTNnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
+
+
                 switch (machine.presentState) {
                     case 0:
                         Frag_BoxSize box_size = new Frag_BoxSize();
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+                        transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.fragment_Holder, box_size);
                         transaction.commit();
                         ProgresBar.setImageResource(R.drawable.input_module_barra_50);
@@ -95,10 +105,64 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
                     case 1:
 
+                        Frag_McKee mckee = new Frag_McKee();
+                        transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_Holder,mckee);
+                        transaction.commit();
+                        InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_mckee);
+                        BTNprev.setVisibility(View.VISIBLE);
+
+                        machine.presentState=2;
                         break;
 
+                    case 2:
+                        //dialog message
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(ItemInputBase.this);
+                        builder1.setMessage("Desea continuar agregando datos o crear el reporte con los datos actuales");
+                        builder1.setCancelable(true);
+
+                        builder1.setPositiveButton(
+                                "continuar",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+
+                                        //continue with this activity
+                                        Frag_Maqueta maqueta = new Frag_Maqueta();
+                                        transaction = getSupportFragmentManager().beginTransaction();
+                                        transaction.replace(R.id.fragment_Holder,maqueta);
+                                        transaction.commit();
+                                        ProgresBar.setVisibility(View.GONE);
+                                        InputBaseBackGround.setBackgroundResource(R.color.MaquetaBackgroundColor);
+                                        BTNprev.setVisibility(View.VISIBLE);
+
+                                        machine.presentState=3;
+                                    }
+                                });
+                        builder1.setNegativeButton(
+                                "crear reporte",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+
+                                        //create output activity
+                                        Intent intent = new Intent(ItemInputBase.this, ReportActivity.class);
+                                        Bundle bund = new Bundle();
+                                        bund.putParcelable("MachineData",machine);
+                                        intent.putExtras(bund);
+                                        startActivity(intent);
+                                    }
+                                });
+                        AlertDialog alert11 = builder1.create();
+                        alert11.show();
+                        break;
+
+                    case 3:
+
+                        break;
 
                 }
+
+                Log.i( "Min_state ",Integer.toString(machine.minState) );
+                Log.i( "Pres_state ",Integer.toString(machine.presentState) );
 
             }
         });
@@ -108,12 +172,14 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
             @Override
             public void onClick(View v) {
 
+
+
                 if(machine.presentState==0 && machine.minState<= machine.presentState-1){
                     //this wold never do nothing, i just write it for better code understanding
 
                 }else if(machine.presentState==1 && machine.minState<= machine.presentState-1){ //TODO: chek <= OR < for the validation
                     Frag_ItemSize item_size = new Frag_ItemSize();
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_Holder, item_size);
                     transaction.commit();
                     ProgresBar.setImageResource(R.drawable.input_module_barra);
@@ -121,12 +187,35 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     BTNprev.setVisibility(View.INVISIBLE);
 
                     machine.presentState=0;
-                }else if(machine.presentState==2 && machine.minState>= machine.presentState-1){
+                }else if(machine.presentState==2 && machine.minState<= machine.presentState-1){
+                    Frag_BoxSize box_size = new Frag_BoxSize();
+                    transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment_Holder, box_size);
+                    transaction.commit();
+                    InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_caja_master);
 
+                    if(machine.minState==machine.presentState-1){
+                        BTNprev.setVisibility(View.INVISIBLE);
+                    }
+
+
+                    machine.presentState=1;
+                }else if(machine.presentState==3 && machine.minState<= machine.presentState-1){
+                    Frag_McKee mckee = new Frag_McKee();
+                    transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment_Holder,mckee);
+                    transaction.commit();
+                    InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_mckee);
+
+                    machine.presentState=2;
                 }
+
+                Log.i( "Min_state ",Integer.toString(machine.minState) );
+                Log.i( "Pres_state ",Integer.toString(machine.presentState) );
 
             }
         });
+
 
     }// end onCreate
 
@@ -177,6 +266,20 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
         Log.d("itemType: ", itemSelcted);
     }
+
+
+    public void geDataSizes_Mckee(int calibre, int largo, int ancho, int etc){
+        machine.mckeeCalibre = calibre;
+        machine.mckeeLargo = largo;
+        machine.mckeeAncho = ancho;
+        machine.mckeeEtc = etc;
+
+        Log.d("McKee calibre:", String.valueOf(calibre));
+    }
+
+
+
+
 
 
 
