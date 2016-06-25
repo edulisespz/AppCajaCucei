@@ -62,4 +62,15 @@
         android:layout_below="@+id/lbl_volpack"
         android:layout_alignLeft="@+id/lbl_volpack"
         android:layout_alignStart="@+id/lbl_volpack" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView3"
+        android:background="@drawable/ImageView_border"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/frag_maque_frasco_vertical"
+        android:padding="7dp" />
 </RelativeLayout>

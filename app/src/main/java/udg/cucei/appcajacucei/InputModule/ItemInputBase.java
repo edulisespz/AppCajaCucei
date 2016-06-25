@@ -116,6 +116,19 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                         break;
 
                     case 2:
+                        Frag_Maqueta maqueta = new Frag_Maqueta();
+                        transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_Holder,maqueta);
+                        transaction.commit();
+                        ProgresBar.setVisibility(View.GONE);
+                        InputBaseBackGround.setBackgroundResource(R.color.MaquetaBackgroundColor);
+                        BTNprev.setVisibility(View.VISIBLE);
+
+                        machine.presentState=3;
+                        break;
+
+                    case 3:
+
                         //dialog message
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(ItemInputBase.this);
                         builder1.setMessage("Desea continuar agregando datos o crear el reporte con los datos actuales");
@@ -126,16 +139,8 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
 
-                                        //continue with this activity
-                                        Frag_Maqueta maqueta = new Frag_Maqueta();
-                                        transaction = getSupportFragmentManager().beginTransaction();
-                                        transaction.replace(R.id.fragment_Holder,maqueta);
-                                        transaction.commit();
-                                        ProgresBar.setVisibility(View.GONE);
-                                        InputBaseBackGround.setBackgroundResource(R.color.MaquetaBackgroundColor);
-                                        BTNprev.setVisibility(View.VISIBLE);
+                                        //continue with next fragment in this activity
 
-                                        machine.presentState=3;
                                     }
                                 });
                         builder1.setNegativeButton(
@@ -153,9 +158,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                                 });
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
-                        break;
 
-                    case 3:
 
                         break;
 
@@ -177,7 +180,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                 if(machine.presentState==0 && machine.minState<= machine.presentState-1){
                     //this wold never do nothing, i just write it for better code understanding
 
-                }else if(machine.presentState==1 && machine.minState<= machine.presentState-1){ //TODO: chek <= OR < for the validation
+                }else if(machine.presentState==1 && machine.minState<= machine.presentState-1){
                     Frag_ItemSize item_size = new Frag_ItemSize();
                     transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_Holder, item_size);
@@ -207,7 +210,11 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     transaction.commit();
                     InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_mckee);
 
+
                     machine.presentState=2;
+                }else if(machine.presentState==4 && machine.minState<= machine.presentState-1){
+
+
                 }
 
                 Log.i( "Min_state ",Integer.toString(machine.minState) );
