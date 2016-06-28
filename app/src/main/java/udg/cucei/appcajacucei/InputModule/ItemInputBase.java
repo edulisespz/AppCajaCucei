@@ -209,6 +209,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     transaction.replace(R.id.fragment_Holder,mckee);
                     transaction.commit();
                     InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_mckee);
+                    ProgresBar.setVisibility(View.VISIBLE);
 
 
                     machine.presentState=2;
