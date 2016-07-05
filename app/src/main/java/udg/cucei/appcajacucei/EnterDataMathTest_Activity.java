@@ -19,23 +19,32 @@ public class EnterDataMathTest_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_data_math_test_);
 
-        Button buttonTest = (Button) findViewById(R.id.btn_algoritmTest);
+        final Button buttonTest = (Button) findViewById(R.id.btn_algoritmTest);
+
+        assert buttonTest != null;// dammint compiler askink for verification
         buttonTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ListStorage box = new ListStorage();
-                int result= box.StorageKind(10,5,10,100,15,10);
+                ListStorage box = new ListStorage(-1);//constructor with number of elemnts
+                int result = box.StorageKind(10, 10, 10, 10, 10, 10);
+                int numofAreas = box.size();
+                Log.d("num of layers", String.valueOf(numofAreas));
+
+                int Numofelemts = box.get(0).amount;
 
                 Log.d("result", String.valueOf(result));
+                Log.d("num of elemnts", String.valueOf(Numofelemts));
+
+                // TODO: remove after fixing the algoritm
+                buttonTest.setAlpha(.5f);
+                buttonTest.setClickable(false);
 
             }
         });
 
-        // TODO: remove after fixing the algoritm
-        buttonTest.setAlpha(.5f);
-        buttonTest.setClickable(false);
-
 
     }
 }
+
+
