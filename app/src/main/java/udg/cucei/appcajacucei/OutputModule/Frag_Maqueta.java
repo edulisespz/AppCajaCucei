@@ -43,7 +43,7 @@ public class Frag_Maqueta extends Fragment {
                     layTop_w=linearLayout.getWidth();
                     Log.d("params","H= "+Integer.toString(layTop_h) +" W= "+Integer.toString(layTop_w)  );
 
-                    setNumberOfItemsOnTOPLayout(linearLayout, 65, 22);// CORE
+                    setNumberOfItemsOnTOPLayout(linearLayout, 30, 45);// CORE
 
                     linearLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
@@ -74,7 +74,7 @@ public class Frag_Maqueta extends Fragment {
             while ( columns*item_W < layTop_w) {//adds columns
 
                 //ImageView Setup
-                imageView = new ImageView(getActivity());
+                imageView = new ImageView(getActivity() );
 
                 //setting image resource
                 imageView.setImageResource(R.drawable.frag_maque_latasuperior);

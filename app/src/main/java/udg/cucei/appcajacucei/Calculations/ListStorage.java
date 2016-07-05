@@ -8,53 +8,30 @@ import java.util.ArrayList;
  * Created by Edgar Ulises on 27/04/2016.
  */
 public class ListStorage extends ArrayList<Storage>{
-    int totalAmount;
-    double constZ;
-    //Int amountDesired
+    int totalAmount=0;
+    int style; //
+    int amountDesired;
 
+        // c = contenedor, E = elemento
     public int StorageKind(int E_x,int E_y,int E_z,
-                           int c_x,int c_y, int c_z, int elements, int Flaglayout){ // c = contenedor, e = elemento
+                           int c_x,int c_y, int c_z,
+                           int amntDesire )
+    {
+        Storage storage;
         int r=0;
-
-
-
-
-        /*
-
-
-		        if(-1 || 0)
-
-        (c.x/e.x)(c.y/e.y)(c.z/e.z) //0
-        (c.x/e.y)(c.y/e.x)(c.z/e.z) //0
-
-                if(-1 || 1)
-        (c.x/e.x)(c.y/e.z)(c.z/e.y)//1
-        (c.x/e.z)(c.y/e.x)(c.z/e.y)//1
-
-                if(-1 || 2)
-        (c.x/e.y)(c.y/e.z)(c.z/e.x)// 2
-        (c.x/e.z)(c.y/e.y)(c.z/e.x)// 2
-
-        ---
-
-         */
+        amountDesired=amntDesire;
 
         int[] kind= new int[6];
 
-        if(Flaglayout==-1||Flaglayout==0) {
             kind[0] = (c_x / E_x) * (c_y / E_y) * (c_z / E_z);
             kind[1] = (c_x / E_y) * (c_y / E_x) * (c_z / E_z);
-        }
 
-        if(Flaglayout==-1||Flaglayout==1) {
             kind[2] = (c_x / E_x) * (c_y / E_z) * (c_z / E_y);
             kind[3] = (c_x / E_z) * (c_y / E_x) * (c_z / E_y);
-        }
 
-        if(Flaglayout==-1||Flaglayout==2) {
             kind[4] = (c_x / E_y) * (c_y / E_z) * (c_z / E_x);
             kind[5] = (c_x / E_z) * (c_y / E_y) * (c_z / E_x);
-        }
+
 
         int kind_F=0;
         int aux=0;
@@ -66,9 +43,9 @@ public class ListStorage extends ArrayList<Storage>{
             }
         }
         kind_F= aux;
-        Log.d("kindF: ", String.valueOf(kind_F) );
+        Log.i("kindF: ", String.valueOf(kind_F) );
 
-        if(elements<=kind_F){
+        if(totalAmount>=amountDesired && amountDesired!=-1){
             Log.i("return","acomodo completado");
             return 1;//acomodo completado satisfactoriamente
         }
@@ -77,23 +54,20 @@ public class ListStorage extends ArrayList<Storage>{
             Log.i("return","espacio insuficiente");
             return -1;//espacio insuficiente en la carga
         }else{
-                //TODO: modify algoritm need to check all the funtion calls
-            Storage storage;
+
             if(kind[0]==kind_F){
                 storage = new Storage(kind[0],E_x,E_y,E_z);
                 this.add(storage);
-                this.totalAmount += (int)kind[0];
-                Flaglayout=0;
+                this.totalAmount += kind[0];
+                style=1;
                 r = this.StorageKind(E_x,E_y,E_z,
-                        c_x-E_x*kind[0], c_y-E_y*kind[0], c_z-E_z*kind[0]
-                        ,elements, Flaglayout);
+                        c_x-E_x*(c_x/E_x), c_y-E_y*(c_y/E_y), c_z-E_z*(c_z/E_z),
+                        amountDesired);
 
-                this.constZ = c_z;
-
-            }else if(kind[1]==kind_F){
+            }else if(kind[1]==kind_F){//TODO: por modificar otro dia
                 storage = new Storage(kind[1],E_x,E_y,E_z);
                 this.add(storage);
-                this.totalAmount += (int)kind[1];
+                this.totalAmount += kind[1];
                 Flaglayout=0;
                 r = this.StorageKind(E_x,E_y,E_z,
                         c_x - E_y*kind[1], c_y - E_x*kind[1], c_z - E_z*kind[1]
