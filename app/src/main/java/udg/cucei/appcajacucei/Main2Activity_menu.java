@@ -17,6 +17,7 @@ public class Main2Activity_menu extends AppCompatActivity {
 
         ImageButton btnBottle = (ImageButton) findViewById(R.id.imageButton_MenuBottle);
 
+        assert btnBottle != null;
         btnBottle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,11 +28,23 @@ public class Main2Activity_menu extends AppCompatActivity {
         });
 
         ImageButton btnBox = (ImageButton)findViewById(R.id.imageButton_MenuCaja);
+        assert btnBox != null;
         btnBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Main2Activity_menu.this, ItemInputBase.class);
                 intent.putExtra("state",1);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btnpallet = (ImageButton)findViewById(R.id.imageButton_MenuPalette);
+        assert btnpallet != null;
+        btnpallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main2Activity_menu.this, ItemInputBase.class);
+                intent.putExtra("state",4);
                 startActivity(intent);
             }
         });

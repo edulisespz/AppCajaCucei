@@ -27,7 +27,7 @@ public class EnterDataMathTest_Activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 ListStorage box = new ListStorage(-1);//constructor with number of elemnts
-                int result = box.StorageKind(10, 10, 10, 10, 10, 10);
+                int result = box.StorageKind(3, 5, 1, 6, 8, 1);
                 int numofAreas = box.size();
                 Log.d("num of layers", String.valueOf(numofAreas));
 

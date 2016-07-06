@@ -70,6 +70,15 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_caja_master);
                     BTNprev.setVisibility(View.INVISIBLE);
                     break;
+                case 4:
+                    Frag_Pallet palletSize = new Frag_Pallet();
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.fragment_Holder, palletSize).commit();// initialize pallet frag
+                    ProgresBar.setImageResource(R.drawable.input_module_barra_75);
+                    InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_pallet);
+                    BTNprev.setVisibility(View.INVISIBLE);
+
+                    break;
             }
         }
 
@@ -190,6 +199,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     BTNprev.setVisibility(View.INVISIBLE);
 
                     machine.presentState=0;
+
                 }else if(machine.presentState==2 && machine.minState<= machine.presentState-1){
                     Frag_BoxSize box_size = new Frag_BoxSize();
                     transaction = getSupportFragmentManager().beginTransaction();
@@ -203,6 +213,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
 
                     machine.presentState=1;
+
                 }else if(machine.presentState==3 && machine.minState<= machine.presentState-1){
                     Frag_McKee mckee = new Frag_McKee();
                     transaction = getSupportFragmentManager().beginTransaction();
@@ -213,6 +224,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
 
                     machine.presentState=2;
+
                 }else if(machine.presentState==4 && machine.minState<= machine.presentState-1){
 
 

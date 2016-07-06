@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:weightSum="1"
+    tools:context="udg.cucei.appcajacucei.InputModule.Frag_McKee">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.20">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/frag_pallete_icon"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DIMENSIONES"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fcfcfc"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.75"
+        android:weightSum="1">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.12"/>
+
+        <Spinner
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_pallet_sizes"
+
+
+            android:prompt="@string/lbl_select_pallet_type"
+            android:layout_gravity="center_horizontal"
+            android:spinnerMode="dialog"
+            android:gravity="center"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.25"/>
+
+        <TextView
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/edit_text_shape"
+            android:text="Large Text"
+            android:id="@+id/textView7"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.12"/>
+
+        <TextView
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/edit_text_shape"
+            android:text="Large Text"
+            android:id="@+id/textView9"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.12"/>
+
+        <TextView
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/edit_text_shape"
+            android:text="Large Text"
+            android:id="@+id/textView11"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>
