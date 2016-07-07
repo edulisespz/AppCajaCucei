@@ -11,6 +11,8 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import junit.framework.Assert;
+
 import udg.cucei.appcajacucei.R;
 
 
@@ -18,6 +20,8 @@ public class Frag_Maqueta extends Fragment {
 
     int layTop_h;
     int layTop_w;
+
+    private View rootView;
 
     public Frag_Maqueta() {
         // Required empty public constructor
@@ -29,7 +33,7 @@ public class Frag_Maqueta extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_frag__maqueta, container, false);
+       rootView = inflater.inflate(R.layout.fragment_frag__maqueta, container, false);
 
 
         //LinearLayOut Setup
@@ -43,7 +47,10 @@ public class Frag_Maqueta extends Fragment {
                     layTop_w=linearLayout.getWidth();
                     Log.d("params","H= "+Integer.toString(layTop_h) +" W= "+Integer.toString(layTop_w)  );
 
-                    setNumberOfItemsOnTOPLayout(linearLayout, 30, 45);// CORE
+
+
+
+                    setNumberOfItemsOnTOPLayout(linearLayout, 75,75);// CORE
 
                     linearLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
@@ -96,6 +103,8 @@ public class Frag_Maqueta extends Fragment {
             rows++;
         }
         Log.d("column&Rows","C= "+Integer.toString(columns-1) +" R= "+Integer.toString(rows-1)  );
+
+        if(item_H >=120) System.exit(0); //TODO: REMOVE LATER ONLY TEST
     }
 
 }

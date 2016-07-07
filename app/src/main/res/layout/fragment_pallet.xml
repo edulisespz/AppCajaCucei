@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.75"
+        android:layout_weight="0.80"
         android:weightSum="1">
 
         <Space
@@ -69,8 +69,24 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
-            android:text="Large Text"
-            android:id="@+id/textView7"
+            android:id="@+id/textView_frg_pall_larg_lbl"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="LARGO"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.12"/>
+
+        <TextView
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/edit_text_shape"
+            android:text="ALTO"
+            android:id="@+id/textView_frg_pall_alto_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"/>
 
@@ -85,24 +101,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
-            android:text="Large Text"
-            android:id="@+id/textView9"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"/>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.12"/>
-
-        <TextView
-            android:layout_width="155dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:background="@drawable/edit_text_shape"
-            android:text="Large Text"
-            android:id="@+id/textView11"
+            android:text="ANCHO"
+            android:id="@+id/textView_frg_pall_ancho_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"/>
 

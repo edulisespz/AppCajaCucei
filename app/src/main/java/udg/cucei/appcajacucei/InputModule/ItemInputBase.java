@@ -140,7 +140,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
                         //dialog message
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(ItemInputBase.this);
-                        builder1.setMessage("Desea continuar agregando datos o crear el reporte con los datos actuales");
+                        builder1.setMessage("Desea continuar agregando datos o crear el reporte con los datos actuales?");
                         builder1.setCancelable(true);
 
                         builder1.setPositiveButton(
@@ -148,7 +148,15 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
 
-                                        //continue with next fragment in this activity
+                                        Frag_Pallet palletSize = new Frag_Pallet();
+                                        transaction = getSupportFragmentManager().beginTransaction();
+                                        transaction.replace(R.id.fragment_Holder,palletSize);
+                                        transaction.commit();
+                                        ProgresBar.setImageResource(R.drawable.input_module_barra_75);
+                                        ProgresBar.setVisibility(View.VISIBLE);
+                                        InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_pallet);
+
+                                        machine.presentState=4;
 
                                     }
                                 });
@@ -226,8 +234,15 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     machine.presentState=2;
 
                 }else if(machine.presentState==4 && machine.minState<= machine.presentState-1){
+                    Frag_Maqueta maqueta = new Frag_Maqueta();
+                    transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment_Holder,maqueta);
+                    transaction.commit();
+                    ProgresBar.setVisibility(View.GONE);
+                    InputBaseBackGround.setBackgroundResource(R.color.MaquetaBackgroundColor);
+                    BTNprev.setVisibility(View.VISIBLE);
 
-
+                    machine.presentState=3;
                 }
 
                 Log.i( "Min_state ",Integer.toString(machine.minState) );

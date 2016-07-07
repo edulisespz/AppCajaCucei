@@ -8,14 +8,13 @@
     <!-- pallet spiner TODO: add languaje later -->
     <string name="lbl_select_pallet_type">Choose a country</string>
     <string-array name="pallets_options">
-        <item>Malaysia</item>
-        <item>United States  0o0o0o0o0 o0o0o0o 0o0o</item>
-        <item>Indonesia</item>
-        <item>France</item>
-        <item>Italy</item>
-        <item>Singapore</item>
-        <item>New Zealand</item>
-        <item>India</item>
+        <item>0: TARIMA </item>
+        <item>1: EUR </item>
+        <item>2: EUR2 </item>
+        <item>3: EUR6 </item>
+        <item>4: North America </item>
+        <item>5: Australia</item>
+        <item>6: Asia</item>
     </string-array>
 
 </resources>
