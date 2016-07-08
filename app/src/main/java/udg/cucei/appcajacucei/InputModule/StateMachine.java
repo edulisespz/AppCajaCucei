@@ -31,6 +31,10 @@ public class StateMachine implements Parcelable {
     int mckeeAncho;
     int mckeeEtc;
 
+    int PalleAlto;
+    int PalleAncho;
+    int PalleLargo;
+
 
 
 
@@ -40,6 +44,8 @@ public class StateMachine implements Parcelable {
 
         itemTipe="square";
         itemOreintation=true;
+
+        PalleAlto=-1;
 
     }
 

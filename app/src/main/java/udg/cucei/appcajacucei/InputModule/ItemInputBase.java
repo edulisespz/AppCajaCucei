@@ -12,13 +12,14 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 
 import udg.cucei.appcajacucei.OutputModule.Frag_Maqueta;
 import udg.cucei.appcajacucei.OutputModule.ReportActivity;
 import udg.cucei.appcajacucei.R;
 
-public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData,Frag_BoxSize.IntefaceData_Box,Frag_McKee.Inteface_Data_McKee {
+public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData,Frag_BoxSize.IntefaceData_Box,Frag_McKee.Inteface_Data_McKee,Frag_Pallet.Inteface_Data_fragPallet {
 
     StateMachine machine;
     ImageView ProgresBar;
@@ -179,6 +180,16 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
                         break;
 
+                    case 4:
+
+                        if(machine.PalleAlto==-1){
+                            Toast.makeText(getApplicationContext(), "porfavor seleccione una opcion",
+                                    Toast.LENGTH_SHORT).show();
+                        }else{
+                            //TODO:
+                        }
+                        break;
+
                 }
 
                 Log.i( "Min_state ",Integer.toString(machine.minState) );
@@ -310,6 +321,14 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
         machine.mckeeEtc = etc;
 
         Log.d("McKee calibre:", String.valueOf(calibre));
+    }
+
+
+    public void geDatatype_Pallet(int Palto, int Plargo, int Pancho){
+        machine.PalleAlto=Palto;
+        machine.PalleLargo=Plargo;
+        machine.PalleAncho=Pancho;
+
     }
 
 

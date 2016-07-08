@@ -49,8 +49,7 @@ public class Frag_Maqueta extends Fragment {
 
 
 
-
-                    setNumberOfItemsOnTOPLayout(linearLayout, 75,75);// CORE
+                    setNumberOfItemsOnTOPLayout(linearLayout, 150,150);// CORE
 
                     linearLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
@@ -104,7 +103,6 @@ public class Frag_Maqueta extends Fragment {
         }
         Log.d("column&Rows","C= "+Integer.toString(columns-1) +" R= "+Integer.toString(rows-1)  );
 
-        if(item_H >=120) System.exit(0); //TODO: REMOVE LATER ONLY TEST
     }
 
 }
