@@ -186,7 +186,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                             Toast.makeText(getApplicationContext(), "porfavor seleccione una opcion",
                                     Toast.LENGTH_SHORT).show();
                         }else{
-                            //TODO:
+                            //TODO: do activity entarimado 2
                         }
                         break;
 
