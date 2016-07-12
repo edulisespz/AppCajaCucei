@@ -148,7 +148,7 @@ public class Frag_Pallet extends Fragment {
             flag_notingSelcted = false;
         }
 
-        //TODO: send the selected thing in a interface
+
 
         //test
         Log.d("selected pos",String.valueOf(P) );

@@ -31,6 +31,7 @@ public class StateMachine implements Parcelable {
     int mckeeAncho;
     int mckeeEtc;
 
+    //TODO: add parceable code
     int PalleAlto;
     int PalleAncho;
     int PalleLargo;
