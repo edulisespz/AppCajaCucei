@@ -25,6 +25,7 @@ public class StateMachine implements Parcelable {
     int boxGrosor;
     int boxPeso;
     boolean boxAmarred;
+    boolean boxCartonisDouble;
 
     int mckeeCalibre;
     int mckeeLargo;

@@ -25,6 +25,8 @@ public class Frag_BoxSize extends Fragment {
     EditText editPeso;
     boolean isAmarre;
     ImageView btnAmarre;
+    boolean isCartonDouble;
+    ImageView btnCarton;
 
     public Frag_BoxSize() {
         // Required empty public constructor
@@ -53,6 +55,8 @@ public class Frag_BoxSize extends Fragment {
 
         btnAmarre=(ImageView)rootView.findViewById(R.id.imageButtonAmarre);
 
+        btnCarton=(ImageView)rootView.findViewById(R.id.imageButtonCarton);
+
 
         isAmarre= false;
         btnAmarre.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +71,22 @@ public class Frag_BoxSize extends Fragment {
                 }
 
                 intf_DataCallBack_Box.getIsAmarred_Box(isAmarre);
+            }
+        });
+
+        isCartonDouble= false;
+        btnCarton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isCartonDouble){
+                    btnCarton.setImageResource(R.drawable.input_module_caja_master_carton_simple);
+                    isCartonDouble= false;
+                }else {
+                    btnCarton.setImageResource(R.drawable.input_module_caja_master_carton_doble);
+                    isCartonDouble=true;
+                }
+
+                intf_DataCallBack_Box.getIsDoubleCartonBox(isCartonDouble);
             }
         });
 
@@ -103,6 +123,7 @@ public class Frag_BoxSize extends Fragment {
     public interface IntefaceData_Box{
         public void geDataSizes_Box(int alto, int ancho, int Grueso, int peso);
         public void getIsAmarred_Box(boolean isAmarred);
+        public void getIsDoubleCartonBox(boolean isCartonDouble);
     }
 
     @Override

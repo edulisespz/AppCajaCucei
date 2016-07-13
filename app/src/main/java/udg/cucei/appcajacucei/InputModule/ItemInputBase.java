@@ -299,6 +299,10 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
         machine.boxAmarred = isAmarred;
         Log.d("is amarred", Boolean.toString(isAmarred) );
     }
+    public void getIsDoubleCartonBox(boolean isCartonDouble){
+        machine.boxCartonisDouble = isCartonDouble;
+        Log.d("is double", Boolean.toString(isCartonDouble) );
+    }
 
     public void ScrollViewChanger(String itemSelcted){
         machine.itemTipe = itemSelcted;

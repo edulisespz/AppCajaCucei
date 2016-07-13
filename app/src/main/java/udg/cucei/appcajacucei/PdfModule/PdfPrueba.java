@@ -124,7 +124,6 @@ public class PdfPrueba extends Activity implements Runnable {
             // Attach the PDf as a Uri, since Android can't take it as bytes yet.
             //mShareIntent.putExtra(Intent.EXTRA_STREAM, uri);
             startActivity(mShareIntent);
-            return;
         }
 
 

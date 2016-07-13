@@ -1,0 +1,2 @@
+Faltó de mi parte, agregar el cuadro donde se captura el peso de la lata, iría debajo del cuadro de cantidad.
+Una disculpa, favor de agregarlo.
