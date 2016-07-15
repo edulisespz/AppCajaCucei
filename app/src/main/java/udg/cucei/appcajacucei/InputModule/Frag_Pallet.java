@@ -50,9 +50,6 @@ public class Frag_Pallet extends Fragment {
 
         spn_palletSizes.setAdapter(adapter);
 
-
-
-
         spn_palletSizes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 saveSelectedPallet(pos);

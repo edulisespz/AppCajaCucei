@@ -6,7 +6,7 @@
     <string name="Language_selected">English is selected</string>
 
     <!-- pallet spiner TODO: add languaje later -->
-    <string name="lbl_select_pallet_type">Choose a country</string>
+
     <string-array name="pallets_options">
         <item>0: TARIMA </item>
         <item>1: EUR </item>
@@ -16,5 +16,18 @@
         <item>5: Australia</item>
         <item>6: Asia</item>
     </string-array>
+
+    <string-array name="container_options">
+        <item>0: CONTENEDOR </item>
+        <item>1: REMOLQUE 53 PIES </item>
+        <item>2: REMOLQUE 48 PIES </item>
+        <item>3: REMOLQUE 28 PIES </item>
+        <item>4: THORTON </item>
+        <item>5: RABON</item>
+        <item>6: CAMIONETA 3.5 TON</item>
+        <item>7: MARITIMO 40 PIES</item>
+        <item>8: MARITIMO 2O PIES</item>
+    </string-array>
+
 
 </resources>

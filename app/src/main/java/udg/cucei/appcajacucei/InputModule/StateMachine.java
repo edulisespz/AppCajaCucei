@@ -37,6 +37,12 @@ public class StateMachine implements Parcelable {
     int PalleAncho;
     int PalleLargo;
 
+    int ContainerAncho;
+    int ContainerLargo;
+    int ContainerAlto;
+    int ContainerCap;
+    int ContainerMaxpeso;
+
 
 
 
@@ -48,6 +54,7 @@ public class StateMachine implements Parcelable {
         itemOreintation=true;
 
         PalleAlto=-1;
+        ContainerAncho=-1;
 
     }
 

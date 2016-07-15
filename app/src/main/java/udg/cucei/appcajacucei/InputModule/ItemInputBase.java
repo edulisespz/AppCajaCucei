@@ -19,7 +19,7 @@ import udg.cucei.appcajacucei.OutputModule.Frag_Maqueta;
 import udg.cucei.appcajacucei.OutputModule.ReportActivity;
 import udg.cucei.appcajacucei.R;
 
-public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData,Frag_BoxSize.IntefaceData_Box,Frag_McKee.Inteface_Data_McKee,Frag_Pallet.Inteface_Data_fragPallet {
+public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData,Frag_BoxSize.IntefaceData_Box,Frag_McKee.Inteface_Data_McKee,Frag_Pallet.Inteface_Data_fragPallet,Frag_Container.Inteface_Data_fragContainer {
 
     StateMachine machine;
     ImageView ProgresBar;
@@ -186,9 +186,27 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                             Toast.makeText(getApplicationContext(), "porfavor seleccione una opcion",
                                     Toast.LENGTH_SHORT).show();
                         }else{
-                            //TODO: do activity entarimado 2
+
+                            Frag_Container container = new Frag_Container();
+                            transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.fragment_Holder,container);
+                            transaction.commit();
+                            ProgresBar.setImageResource(R.drawable.input_module_barra_100);
+                            ProgresBar.setVisibility(View.VISIBLE);
+                            InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_contenedor);
+
+                            machine.presentState=5;
                         }
                         break;
+
+                    case 5:
+
+                        if(machine.ContainerAncho==-1){
+                            Toast.makeText(getApplicationContext(), "porfavor seleccione una opcion",
+                                    Toast.LENGTH_SHORT).show();
+                        }else{
+                            //TODO: i dont know...
+                        }
 
                 }
 
@@ -254,6 +272,17 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     BTNprev.setVisibility(View.VISIBLE);
 
                     machine.presentState=3;
+                }else if(machine.presentState==5 && machine.minState<= machine.presentState-1){
+                    Frag_Pallet palletSize = new Frag_Pallet();
+                    transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment_Holder,palletSize);
+                    transaction.commit();
+                    ProgresBar.setImageResource(R.drawable.input_module_barra_75);
+                    ProgresBar.setVisibility(View.VISIBLE);
+                    InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_pallet);
+
+                    machine.presentState=4;
+
                 }
 
                 Log.i( "Min_state ",Integer.toString(machine.minState) );
@@ -332,6 +361,15 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
         machine.PalleAlto=Palto;
         machine.PalleLargo=Plargo;
         machine.PalleAncho=Pancho;
+
+    }
+
+    public void geDatatype_Container(int Cancho, int Clargo, int Calto, int Capacity, int Cpesomax){
+        machine.ContainerAncho = Cancho;
+        machine.ContainerLargo = Clargo;
+        machine.ContainerAlto = Calto;
+        machine.ContainerCap = Capacity;
+        machine.ContainerMaxpeso = Cpesomax;
 
     }
 

@@ -2,10 +2,9 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              tools:context="udg.cucei.appcajacucei.InputModule.Frag_Container"
               android:orientation="vertical"
-              android:paddingBottom="10dp"
-              android:weightSum="1"
-              tools:context="udg.cucei.appcajacucei.InputModule.Frag_Pallet">
+              android:weightSum="1">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,8 +17,9 @@
             android:layout_height="75dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:src="@drawable/frag_pallete_icon"
-            android:layout_centerVertical="true"/>
+            android:src="@drawable/frag_container_icon"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"/>
 
         <TextView
             android:id="@+id/textView5"
@@ -49,7 +49,7 @@
         <Spinner
             android:layout_width="312dp"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner_pallet_sizes"
+            android:id="@+id/spinner_container_sizes"
 
             android:layout_gravity="center_horizontal"
             android:spinnerMode="dialog"
@@ -67,10 +67,26 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
-            android:id="@+id/textView_frg_pall_larg_lbl"
+            android:id="@+id/textView_frg_cont_ancho_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="LARGO"/>
+            android:text="ANCHO"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.12"/>
+
+        <TextView
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/edit_text_shape"
+            android:text="LARGO"
+            android:id="@+id/textView_frg_cont_largo_lbl"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
 
         <Space
             android:layout_width="match_parent"
@@ -84,7 +100,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
             android:text="ALTO"
-            android:id="@+id/textView_frg_pall_alto_lbl"
+            android:id="@+id/textView_frg_cont_alto_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"/>
 
@@ -99,11 +115,28 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
-            android:text="ANCHO"
-            android:id="@+id/textView_frg_pall_ancho_lbl"
+            android:text="CAPACIDAD"
+            android:id="@+id/textView_frg_cont_capacidad_lbl"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.12"/>
+
+        <TextView
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/edit_text_shape"
+            android:text="PESO MAX"
+            android:id="@+id/textView_frg_cont_pesomax_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"/>
 
     </LinearLayout>
+
 
 </LinearLayout>
