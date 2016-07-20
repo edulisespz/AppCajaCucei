@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="udg.cucei.appcajacucei">
+          package="udg.cucei.appcajacucei">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -10,7 +11,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StarThings.MainActivity" />
+        <activity android:name=".StarThings.MainActivity"/>
 
         <!-- FileProvider - a ContentProvider for making the image file securely available to the other end -->
         <provider
@@ -20,40 +21,37 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
+                android:resource="@xml/file_paths"/>
         </provider>
 
-        <activity android:name=".PdfModule.PdfPrueba" />
-        <activity android:name=".InstagramTest" />
+        <activity android:name=".PdfModule.PdfPrueba"/>
+        <activity android:name=".InstagramTest"/>
         <activity
             android:name=".StarThings.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".DrawingModule.PaintTest" />
+        <activity android:name=".DrawingModule.PaintTest"/>
         <activity
             android:name=".Main2Activity_menu"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".EnterDataMathTest_Activity" />
+        <activity android:name=".EnterDataMathTest_Activity"/>
         <activity
             android:name=".StarThings.AfterSplash_Language"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
             android:name=".InputModule.ItemInputBase"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".OutputModule.ReportActivity"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".OutputModule.ReportActivity"/>
+        <activity android:name=".PdfModule.FileChooser">
+        </activity>
     </application>
 
 </manifest>

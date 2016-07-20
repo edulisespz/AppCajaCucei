@@ -22,6 +22,7 @@ public class AfterSplash_Language extends AppCompatActivity {
         setContentView(R.layout.activity_after_splash__language);
 
         TextView LblEnglish = (TextView) findViewById(R.id.textViewEnglish);
+        assert LblEnglish != null;
         LblEnglish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +43,7 @@ public class AfterSplash_Language extends AppCompatActivity {
         });
 
         TextView LblEspanish = (TextView) findViewById(R.id.textViewEspanol);
+        assert LblEspanish != null;
         LblEspanish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -4,7 +4,6 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -32,6 +31,10 @@ public class ReportActivity extends AppCompatActivity {
     StateMachine machinedata;
     Button Btn_create;
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,8 @@ public class ReportActivity extends AppCompatActivity {
 
 
         //// TODO: here i will be something for the pdf or i dont know...
+
+
 
     }
 
