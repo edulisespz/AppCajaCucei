@@ -13,7 +13,7 @@ import udg.cucei.appcajacucei.PdfModule.FileChooser;
 
 public class Main2Activity_menu extends AppCompatActivity {
 
-    private int PICK_IMAGE_REQUEST = 1;
+    //private int PICK_IMAGE_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

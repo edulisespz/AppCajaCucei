@@ -1,6 +1,8 @@
 package udg.cucei.appcajacucei.PdfModule;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -18,6 +21,10 @@ import java.util.List;
 import udg.cucei.appcajacucei.R;
 
 public class FileChooser extends AppCompatActivity {
+
+
+    File file[];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +39,13 @@ public class FileChooser extends AppCompatActivity {
         String path = Environment.getExternalStorageDirectory().toString()+"/pdfdemo_itext";
         Log.d("Files", "Path: " + path);
         File f = new File(path);
-        File file[] = f.listFiles();
+        file = f.listFiles();
         Log.d("Files", "Size: "+ file.length);
+
+        if(file.length==0){
+            Toast.makeText(getApplicationContext(), "No se encontro ningun archivo",
+                    Toast.LENGTH_LONG).show();
+        }
 
         for (int i=0; i < file.length; i++)
         {
@@ -55,7 +67,13 @@ public class FileChooser extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
 
-                //TODO: do smoething here
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.putExtra(Intent.EXTRA_SUBJECT,"subject");
+                email.putExtra(Intent.EXTRA_TEXT, "text");//TODO: chage later
+                Uri uri = Uri.fromFile(file[position]);
+                email.putExtra(Intent.EXTRA_STREAM, uri);
+                email.setType("message/rfc822");
+                startActivity(email);
             }
 
         });
