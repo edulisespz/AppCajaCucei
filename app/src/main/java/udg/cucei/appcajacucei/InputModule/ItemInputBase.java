@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
+import udg.cucei.appcajacucei.OutputModule.Frag_ContenedorResutls;
 import udg.cucei.appcajacucei.OutputModule.Frag_EmpaquetadoResults;
 import udg.cucei.appcajacucei.OutputModule.Frag_EntarimadoResults;
 import udg.cucei.appcajacucei.OutputModule.ReportActivity;
@@ -78,6 +79,16 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                             .add(R.id.fragment_Holder, palletSize).commit();// initialize pallet frag
                     ProgresBar.setImageResource(R.drawable.input_module_barra_75);
                     InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_pallet);
+                    BTNprev.setVisibility(View.INVISIBLE);
+
+                    break;
+
+                case 6:
+                    Frag_Container cont = new Frag_Container();
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.fragment_Holder, cont).commit();
+                    ProgresBar.setImageResource(R.drawable.input_module_barra_100);
+                    InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_contenedor);
                     BTNprev.setVisibility(View.INVISIBLE);
 
                     break;
@@ -221,7 +232,15 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                             Toast.makeText(getApplicationContext(), "porfavor seleccione una opcion",
                                     Toast.LENGTH_SHORT).show();
                         }else{
-                            //TODO: i dont know...
+                            Frag_ContenedorResutls resultsCont = new Frag_ContenedorResutls();
+                            transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.fragment_Holder, resultsCont);
+                            transaction.commit();
+                            ProgresBar.setVisibility(View.GONE);
+                            InputBaseBackGround.setBackgroundResource(R.color.MaquetaBackgroundColor);
+                            BTNprev.setVisibility(View.VISIBLE);
+
+                            machine.presentState = 7;
                         }
 
                 }
@@ -298,6 +317,10 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     ProgresBar.setVisibility(View.VISIBLE);
                     InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_pallet);
 
+                    if(machine.minState==machine.presentState-1){
+                        BTNprev.setVisibility(View.INVISIBLE);
+                    }
+
                     machine.presentState=4;
 
                 }else if(machine.presentState==6 && machine.minState<= machine.presentState-1){
@@ -310,6 +333,23 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     BTNprev.setVisibility(View.VISIBLE);
 
                     machine.presentState = 5;
+
+                }else if(machine.presentState==7 && machine.minState<= machine.presentState-1){
+
+                    Frag_Container container = new Frag_Container();
+                    transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment_Holder, container);
+                    transaction.commit();
+                    ProgresBar.setImageResource(R.drawable.input_module_barra_100);
+                    ProgresBar.setVisibility(View.VISIBLE);
+                    InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_contenedor);
+
+                    if(machine.minState==machine.presentState-1){
+                        BTNprev.setVisibility(View.INVISIBLE);
+                    }
+
+                    machine.presentState = 6;
+
 
                 }
 

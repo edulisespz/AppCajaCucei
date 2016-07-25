@@ -25,7 +25,7 @@ public class Frag_Container extends Fragment {
     TextView lbl_cont_Alto;
     TextView lbl_cont_Cap;
     TextView lbl_cont_Peso;
-    private boolean flag_notingSelcted;
+    private boolean flag_notingSelcted;// i was drunk and costipated when i wrote this, and now its fixed
 
     public Frag_Container() {
         // Required empty public constructor

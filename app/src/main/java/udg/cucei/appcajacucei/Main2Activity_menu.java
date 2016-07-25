@@ -71,8 +71,17 @@ public class Main2Activity_menu extends AppCompatActivity {
 
                 Intent intent = new Intent(Main2Activity_menu.this, FileChooser.class);
                 startActivity(intent);
+            }
+        });
 
-
+        ImageButton btnCamion = (ImageButton)findViewById(R.id.imageButton_MenuCamion);
+        assert btnCamion != null;
+        btnCamion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main2Activity_menu.this, ItemInputBase.class);
+                intent.putExtra("state",6);
+                startActivity(intent);
             }
         });
 

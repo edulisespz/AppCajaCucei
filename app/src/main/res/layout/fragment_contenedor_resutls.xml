@@ -1,23 +1,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context="udg.cucei.appcajacucei.OutputModule.Frag_EntarimadoResults"
-              android:weightSum="1">
-
+              tools:context="udg.cucei.appcajacucei.OutputModule.Frag_ContenedorResutls"
+              android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.55">
+        android:layout_weight="0.40">
 
         <ImageView
             android:layout_width="250dp"
-            android:layout_height="300dp"
+            android:layout_height="250dp"
             android:id="@+id/imgVPlaceHolder_Contenedor"
-            android:src="@drawable/output_module_caja_empaquetado_test"
-            android:layout_centerVertical="true"
+            android:src="@drawable/outputmodule_frag_contenedor_contenedor_000"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"/>
 
         <TextView
@@ -27,8 +25,7 @@
             android:id="@+id/textView7"
             android:layout_alignBottom="@+id/imgVPlaceHolder_Contenedor"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginEnd="29dp"/>
 
     </RelativeLayout>
 
@@ -43,17 +40,17 @@
             android:layout_height="wrap_content"
             android:text="Volumen"
             android:id="@+id/textView9"
+            android:layout_marginStart="82dp"
+            android:layout_marginTop="25dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="85dp"
-            android:layout_marginTop="15dp"/>
+            android:layout_alignParentStart="true"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Area"
             android:id="@+id/textView11"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_below="@+id/textView9"
             android:layout_alignStart="@+id/textView9"/>
 
@@ -64,7 +61,7 @@
             android:id="@+id/textView12"
             android:layout_below="@+id/textView11"
             android:layout_alignStart="@+id/textView11"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="5dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -73,14 +70,14 @@
             android:id="@+id/textView13"
             android:layout_below="@+id/textView12"
             android:layout_alignStart="@+id/textView12"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="5dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cajas por cama"
+            android:text="Cajas por tarima"
             android:id="@+id/textView14"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_below="@+id/textView13"
             android:layout_alignStart="@+id/textView13"/>
 
@@ -122,9 +119,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="n"
-            android:id="@+id/lblCajaspCama"
+            android:id="@+id/lblCajaspCama_Contenedor"
             android:layout_alignTop="@+id/textView14"
             android:layout_alignStart="@+id/lblCajas_Contenedor"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tarimas"
+            android:id="@+id/textView16"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/textView14"
+            android:layout_alignStart="@+id/textView14"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:id="@+id/lblTarimas_Contenedor"
+            android:layout_alignTop="@+id/textView16"
+            android:layout_alignStart="@+id/lblCajaspCama_Contenedor"/>
     </RelativeLayout>
 
 </LinearLayout>
