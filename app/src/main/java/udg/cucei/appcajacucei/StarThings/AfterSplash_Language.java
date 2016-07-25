@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
+import udg.cucei.appcajacucei.Main2Activity_menu;
 import udg.cucei.appcajacucei.R;
 
 public class AfterSplash_Language extends AppCompatActivity {
@@ -37,7 +38,8 @@ public class AfterSplash_Language extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "Welcome",
                         Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(AfterSplash_Language.this, MainActivity.class);
+                //Intent intent = new Intent(AfterSplash_Language.this, MainActivity.class);
+                Intent intent = new Intent(AfterSplash_Language.this, Main2Activity_menu.class);
                 startActivity(intent);
             }
         });
@@ -58,7 +60,8 @@ public class AfterSplash_Language extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "Bienvenido",
                         Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(AfterSplash_Language.this, MainActivity.class);
+                //Intent intent = new Intent(AfterSplash_Language.this, MainActivity.class);
+                Intent intent = new Intent(AfterSplash_Language.this, Main2Activity_menu.class);
                 startActivity(intent);
             }
         });

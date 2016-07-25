@@ -11,19 +11,17 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import junit.framework.Assert;
-
 import udg.cucei.appcajacucei.R;
 
 
-public class Frag_Maqueta extends Fragment {
+public class Frag_EmpaquetadoResults extends Fragment {
 
     int layTop_h;
     int layTop_w;
 
     private View rootView;
 
-    public Frag_Maqueta() {
+    public Frag_EmpaquetadoResults() {
         // Required empty public constructor
     }
 
@@ -33,7 +31,7 @@ public class Frag_Maqueta extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-       rootView = inflater.inflate(R.layout.fragment_frag__maqueta, container, false);
+       rootView = inflater.inflate(R.layout.fragment_empaquetado_results, container, false);
 
 
         //LinearLayOut Setup

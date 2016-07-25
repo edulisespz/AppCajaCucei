@@ -1,4 +1,4 @@
-package udg.cucei.appcajacucei.StarThings;
+package udg.cucei.appcajacucei.Unused_Things;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,11 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import udg.cucei.appcajacucei.DrawingModule.PaintTest;
-import udg.cucei.appcajacucei.EnterDataMathTest_Activity;
-import udg.cucei.appcajacucei.InstagramTest;
 import udg.cucei.appcajacucei.Main2Activity_menu;
-import udg.cucei.appcajacucei.PdfModule.PdfPrueba;
 import udg.cucei.appcajacucei.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button boton =(Button) findViewById(R.id.button1);
 
+        assert boton != null;
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnInstagram = (Button) findViewById(R.id.btninstagram);
 
+        assert btnInstagram != null;
         btnInstagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button botonPaint =(Button) findViewById(R.id.button_Paint);
 
+        assert botonPaint != null;
         botonPaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button button_Menu = (Button) findViewById(R.id.buttonMenu);
 
+        assert button_Menu != null;
         button_Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button button_Algoritm = (Button) findViewById(R.id.btnMathAlgo);
 
+        assert button_Algoritm != null;
         button_Algoritm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

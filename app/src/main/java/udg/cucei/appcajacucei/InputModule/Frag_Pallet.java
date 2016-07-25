@@ -24,7 +24,7 @@ public class Frag_Pallet extends Fragment {
     TextView lbl_pall_largo;
     TextView lbl_pall_Alto;
     TextView lbl_pall_Ancho;
-    boolean flag_notingSelcted;
+    boolean flag_notingSelcted = true;
 
     public Frag_Pallet() {
         // Required empty public constructor
@@ -40,7 +40,7 @@ public class Frag_Pallet extends Fragment {
         lbl_pall_Alto=(TextView)rootview.findViewById(R.id.textView_frg_pall_alto_lbl);
         lbl_pall_largo=(TextView)rootview.findViewById(R.id.textView_frg_pall_larg_lbl);
         lbl_pall_Ancho=(TextView)rootview.findViewById(R.id.textView_frg_pall_ancho_lbl);
-        flag_notingSelcted =true;
+        flag_notingSelcted = true;
 
 
         spn_palletSizes=(Spinner)rootview.findViewById(R.id.spinner_pallet_sizes);
@@ -89,10 +89,10 @@ public class Frag_Pallet extends Fragment {
 
         switch (P){
             case 0:
-                if(flag_notingSelcted) {
-                    flag_notingSelcted = false;
-                }
-                else {//TARIMA
+                //if(flag_notingSelcted) {
+                //    flag_notingSelcted = false;
+                //}
+                //else {//TARIMA
                     lbl_pall_Alto.setText("ALTO");
                     lbl_pall_largo.setText("LARGO");
                     lbl_pall_Ancho.setText("ANCHO");
@@ -100,7 +100,7 @@ public class Frag_Pallet extends Fragment {
                     intfPallet.geDatatype_Pallet(-1,-1,-1);
 
                     flag_notingSelcted = true;
-                }
+                //}
 
                 break;
             case 1://EUR

@@ -1,4 +1,4 @@
-package udg.cucei.appcajacucei;
+package udg.cucei.appcajacucei.Unused_Things;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.widget.ImageView;
 
 import java.io.File;
 import java.io.IOException;
+
+import udg.cucei.appcajacucei.R;
 
 /**
  * Created by adolfo on 8/03/16.

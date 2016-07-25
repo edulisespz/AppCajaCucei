@@ -1,4 +1,4 @@
-package udg.cucei.appcajacucei;
+package udg.cucei.appcajacucei.Unused_Things;
 
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.Toast;
 import java.util.Locale;
 
 import udg.cucei.appcajacucei.Calculations.ListStorage;
+import udg.cucei.appcajacucei.R;
 
 public class EnterDataMathTest_Activity extends AppCompatActivity {
 

@@ -91,10 +91,10 @@ public class Frag_Container extends Fragment {
 
         switch (P){
             case 0:
-                if(flag_notingSelcted) {
-                    flag_notingSelcted = false;
-                }
-                else {//TARIMA
+                //if(flag_notingSelcted) {
+                //    flag_notingSelcted = false;
+                //}
+                //else {//TARIMA
                     lbl_cont_Alto.setText("ANCHO");
                     lbl_cont_largo.setText("LARGO");
                     lbl_cont_Ancho.setText("ALTO");
@@ -105,7 +105,7 @@ public class Frag_Container extends Fragment {
                     intfContainer.geDatatype_Container(-1,-1,-1,-1,-1);
 
                     flag_notingSelcted = true;
-                }
+                //}
 
                 break;
             case 1://EUR

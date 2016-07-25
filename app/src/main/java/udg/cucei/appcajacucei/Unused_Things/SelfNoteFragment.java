@@ -1,4 +1,4 @@
-package udg.cucei.appcajacucei;
+package udg.cucei.appcajacucei.Unused_Things;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import udg.cucei.appcajacucei.R;
 
 public class SelfNoteFragment extends Fragment {
     private View mRootView;

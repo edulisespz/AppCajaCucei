@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="udg.cucei.appcajacucei.OutputModule.ReportActivity"
+              android:weightSum="1">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.65">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:id="@+id/imgVPlaceHolderPallet"
+            android:src="@drawable/output_module_caja_empaquetado_test"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView7"
+            android:layout_marginBottom="31dp"
+            android:layout_alignBottom="@+id/imgVPlaceHolderPallet"
+            android:layout_alignEnd="@+id/imgVPlaceHolderPallet"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volumen"
+            android:id="@+id/textView9"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Area"
+            android:id="@+id/textView11"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textView9"
+            android:layout_alignStart="@+id/textView9"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Piezas"
+            android:id="@+id/textView12"
+            android:layout_below="@+id/textView11"
+            android:layout_alignStart="@+id/textView11"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cajas"
+            android:id="@+id/textView13"
+            android:layout_below="@+id/textView12"
+            android:layout_alignStart="@+id/textView12"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cajas por cama"
+            android:id="@+id/textView14"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textView13"
+            android:layout_alignStart="@+id/textView13"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:id="@+id/lblVolumen"
+            android:layout_marginStart="80dp"
+            android:layout_alignBaseline="@+id/textView9"
+            android:layout_alignBottom="@+id/textView9"
+            android:layout_toEndOf="@+id/textView14"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:id="@+id/lblArea"
+            android:layout_alignTop="@+id/textView11"
+            android:layout_alignStart="@+id/lblVolumen"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:id="@+id/lblPiezas"
+            android:layout_alignTop="@+id/textView12"
+            android:layout_alignStart="@+id/lblArea"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:id="@+id/lblCajas"
+            android:layout_alignTop="@+id/textView13"
+            android:layout_alignStart="@+id/lblPiezas"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:id="@+id/lblCajaspCama"
+            android:layout_alignTop="@+id/textView14"
+            android:layout_alignStart="@+id/lblCajas"/>
+    </RelativeLayout>
+
+</LinearLayout>

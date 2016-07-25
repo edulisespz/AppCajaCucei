@@ -15,7 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
-import udg.cucei.appcajacucei.OutputModule.Frag_Maqueta;
+import udg.cucei.appcajacucei.OutputModule.Frag_EmpaquetadoResults;
+import udg.cucei.appcajacucei.OutputModule.Frag_EntarimadoResults;
 import udg.cucei.appcajacucei.OutputModule.ReportActivity;
 import udg.cucei.appcajacucei.R;
 
@@ -126,7 +127,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                         break;
 
                     case 2:
-                        Frag_Maqueta maqueta = new Frag_Maqueta();
+                        Frag_EmpaquetadoResults maqueta = new Frag_EmpaquetadoResults();
                         transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.fragment_Holder,maqueta);
                         transaction.commit();
@@ -172,6 +173,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                                         bund.putParcelable("MachineData",machine);
                                         intent.putExtras(bund);
                                         startActivity(intent);
+                                        //TODO: call the pdf view
                                     }
                                 });
                         AlertDialog alert11 = builder1.create();
@@ -185,21 +187,35 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                         if(machine.PalleAlto==-1){
                             Toast.makeText(getApplicationContext(), "porfavor seleccione una opcion",
                                     Toast.LENGTH_SHORT).show();
-                        }else{
-
-                            Frag_Container container = new Frag_Container();
+                        }else {
+                            Frag_EntarimadoResults results = new Frag_EntarimadoResults();
                             transaction = getSupportFragmentManager().beginTransaction();
-                            transaction.replace(R.id.fragment_Holder,container);
+                            transaction.replace(R.id.fragment_Holder, results);
                             transaction.commit();
-                            ProgresBar.setImageResource(R.drawable.input_module_barra_100);
-                            ProgresBar.setVisibility(View.VISIBLE);
-                            InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_contenedor);
+                            ProgresBar.setVisibility(View.GONE);
+                            InputBaseBackGround.setBackgroundResource(R.color.MaquetaBackgroundColor);
+                            BTNprev.setVisibility(View.VISIBLE);
 
-                            machine.presentState=5;
+                            machine.presentState = 5;
                         }
                         break;
 
+
                     case 5:
+
+                        Frag_Container container = new Frag_Container();
+                        transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_Holder, container);
+                        transaction.commit();
+                        ProgresBar.setImageResource(R.drawable.input_module_barra_100);
+                        ProgresBar.setVisibility(View.VISIBLE);
+                        InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_contenedor);
+
+                        machine.presentState = 6;
+
+                        break;
+
+                    case 6:
 
                         if(machine.ContainerAncho==-1){
                             Toast.makeText(getApplicationContext(), "porfavor seleccione una opcion",
@@ -263,7 +279,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     machine.presentState=2;
 
                 }else if(machine.presentState==4 && machine.minState<= machine.presentState-1){
-                    Frag_Maqueta maqueta = new Frag_Maqueta();
+                    Frag_EmpaquetadoResults maqueta = new Frag_EmpaquetadoResults();
                     transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_Holder,maqueta);
                     transaction.commit();
@@ -272,6 +288,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     BTNprev.setVisibility(View.VISIBLE);
 
                     machine.presentState=3;
+
                 }else if(machine.presentState==5 && machine.minState<= machine.presentState-1){
                     Frag_Pallet palletSize = new Frag_Pallet();
                     transaction = getSupportFragmentManager().beginTransaction();
@@ -282,6 +299,17 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                     InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_pallet);
 
                     machine.presentState=4;
+
+                }else if(machine.presentState==6 && machine.minState<= machine.presentState-1){
+                    Frag_EntarimadoResults results = new Frag_EntarimadoResults();
+                    transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment_Holder, results);
+                    transaction.commit();
+                    ProgresBar.setVisibility(View.GONE);
+                    InputBaseBackGround.setBackgroundResource(R.color.MaquetaBackgroundColor);
+                    BTNprev.setVisibility(View.VISIBLE);
+
+                    machine.presentState = 5;
 
                 }
 
