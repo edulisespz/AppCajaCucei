@@ -15,16 +15,19 @@
         android:layout_height="match_parent"
         android:layout_weight=".75">
 
-        <ImageView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
 
-            android:id="@+id/imgViewt_Title"
+            android:text="OYSTER PALLET"
+            android:id="@+id/TextView_Title"
             android:layout_gravity="top|center_horizontal"
             android:gravity="center_vertical|center_horizontal"
 
-            android:src="@drawable/oyster_pallet_logo"/>
+            android:src="@drawable/oyster_pallet_logo"
+            android:textSize="40sp"
+            android:textColor="#ffffff"/>
     </LinearLayout>
 
     <LinearLayout

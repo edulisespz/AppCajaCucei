@@ -1,12 +1,14 @@
 package udg.cucei.appcajacucei;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import udg.cucei.appcajacucei.InputModule.ItemInputBase;
 import udg.cucei.appcajacucei.PdfModule.FileChooser;
@@ -19,6 +21,11 @@ public class Main2Activity_menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_activity_menu);
+
+        TextView lblTitle = (TextView) findViewById(R.id.TextView_Title);
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Gotham-Light.otf");
+        assert lblTitle != null;
+        lblTitle.setTypeface(type);
 
         ImageButton btnBottle = (ImageButton) findViewById(R.id.imageButton_MenuBottle);
         assert btnBottle != null;

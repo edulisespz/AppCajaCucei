@@ -6,11 +6,34 @@
     android:layout_height="match_parent"
     tools:context="udg.cucei.appcajacucei.PdfModule.FileChooser">
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:id="@+id/listViewFiles"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:choiceMode="singleChoice"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:id="@+id/listViewFiles"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:choiceMode="singleChoice"
+            android:layout_weight="0.82"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.10"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Seleccione el archivo a compartir"
+            android:id="@+id/textView17"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
 </RelativeLayout>
