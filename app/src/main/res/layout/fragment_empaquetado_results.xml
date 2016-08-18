@@ -1,11 +1,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OutputModule.Frag_EmpaquetadoResults"
-    android:paddingLeft="10dp"
-    android:weightSum="1">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context=".OutputModule.Frag_EmpaquetadoResults"
+              android:paddingLeft="10dp"
+              android:weightSum="1"
+    >
 
     <RelativeLayout
         android:orientation="horizontal"
@@ -87,9 +88,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
         android:layout_weight="0.75"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_gravity="center_horizontal">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -127,6 +128,32 @@
                 android:id="@+id/LinLayTopView"
                 android:padding="5dp"></LinearLayout>
         </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.70">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/imageView4"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="25dp"
+                android:src="@drawable/frag_empaquetado_results_caja"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageView5"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/frag_maque_frasco_vertical"/>
+        </RelativeLayout>
+
     </LinearLayout>
 
 
