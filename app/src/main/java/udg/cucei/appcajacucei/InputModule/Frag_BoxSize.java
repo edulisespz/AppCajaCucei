@@ -2,6 +2,7 @@ package udg.cucei.appcajacucei.InputModule;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import udg.cucei.appcajacucei.OutputModule.Box_egg_Activity;
 import udg.cucei.appcajacucei.R;
 
 
@@ -87,6 +89,17 @@ public class Frag_BoxSize extends Fragment {
                 }
 
                 intf_DataCallBack_Box.getIsDoubleCartonBox(isCartonDouble);
+            }
+        });
+
+
+        ImageView boxegg = (ImageView) rootView.findViewById(R.id.imageView_egg);
+        boxegg.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(getContext(), Box_egg_Activity.class);
+                startActivity(intent);
+                return true;
             }
         });
 

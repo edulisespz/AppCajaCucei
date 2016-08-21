@@ -52,6 +52,8 @@
         <activity android:name=".OutputModule.ReportActivity"/>
         <activity android:name=".PdfModule.FileChooser">
         </activity>
+        <activity android:name=".OutputModule.Box_egg_Activity">
+        </activity>
     </application>
 
 </manifest>

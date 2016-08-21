@@ -47,7 +47,7 @@ public class Frag_EmpaquetadoResults extends Fragment {
 
 
 
-                    setNumberOfItemsOnTOPLayout(linearLayout, 150,150);// CORE
+                    setNumberOfItemsOnTOPLayout(linearLayout, 25,75);// CORE
 
                     linearLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
