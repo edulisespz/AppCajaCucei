@@ -11,6 +11,9 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import udg.cucei.appcajacucei.Calculations.ListStorage;
+import udg.cucei.appcajacucei.Calculations.Shape;
+import udg.cucei.appcajacucei.InputModule.StateMachine;
 import udg.cucei.appcajacucei.R;
 
 
@@ -18,6 +21,8 @@ public class Frag_EmpaquetadoResults extends Fragment {
 
     int layTop_h;
     int layTop_w;
+
+    StateMachine objMachime;
 
     private View rootView;
 
@@ -34,27 +39,42 @@ public class Frag_EmpaquetadoResults extends Fragment {
        rootView = inflater.inflate(R.layout.fragment_empaquetado_results, container, false);
 
 
-        //LinearLayOut Setup
-        final LinearLayout linearLayout=(LinearLayout) rootView.findViewById(R.id.LinLayTopView);
+        //get the ObjectData
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            objMachime = bundle.getParcelable(StateMachine.KEY_DATA);
+        }
 
-        ViewTreeObserver observer = linearLayout.getViewTreeObserver();
-            observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                @Override
-                public void onGlobalLayout() {
-                    layTop_h=linearLayout.getHeight();
-                    layTop_w=linearLayout.getWidth();
-                    Log.d("params","H= "+Integer.toString(layTop_h) +" W= "+Integer.toString(layTop_w)  );
+        Log.d("Frag_EmpaquetadoRes:"," machine itemAlto:" + String.valueOf(objMachime.itemAlto));
 
 
+        foo_procesData();
 
-                    setNumberOfItemsOnTOPLayout(linearLayout, 25,75);// CORE
 
-                    linearLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
-                }
-            });
 
-        //setNumberOfItemsOnTOPLayout(linearLayout, 50, 50);
+
+        ////LinearLayOut Setup
+        //final LinearLayout linearLayout=(LinearLayout) rootView.findViewById(R.id.LinLayTopView);
+        //
+        //ViewTreeObserver observer = linearLayout.getViewTreeObserver();
+        //    observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        //        @Override
+        //        public void onGlobalLayout() {
+        //            layTop_h=linearLayout.getHeight();
+        //            layTop_w=linearLayout.getWidth();
+        //            Log.d("params","H= "+Integer.toString(layTop_h) +" W= "+Integer.toString(layTop_w)  );
+        //
+        //
+        //
+        //            setNumberOfItemsOnTOPLayout(linearLayout, 25,75);// CORE
+        //
+        //            linearLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        //
+        //        }
+        //    });
+        //
+        ////setNumberOfItemsOnTOPLayout(linearLayout, 50, 50);
 
 
 
@@ -62,6 +82,30 @@ public class Frag_EmpaquetadoResults extends Fragment {
         return rootView;
     }
 
+    private void foo_procesData() {
+        Shape element = new Shape(3,5,1);
+        Shape box=new Shape(8,6,1);
+        int elements2store= 3;
+
+        ListStorage l = new ListStorage(element, box, elements2store);
+
+        if (l.storageKind() == 1)
+        {
+            Console.Write("espacio suficiente: " + Environment.NewLine);//TODO: change this
+            foreach (Storage s in l)
+            {
+                Console.Write("    acomoda " + s.getAmount() + " objetos de la forma x=" + s.getX()
+                        + " y=" + s.getY() + " z=" + s.getZ() + Environment.NewLine );
+            }
+        }
+
+        else
+        {
+            int e = (elements2store - 1) / l.getTotalAmount() + 1;
+            Console.Write("espacio insuficiente, necesitas " + e + " cajas" + Environment.NewLine );
+        }
+        Console.Write(l.getTotalAmount() + " elementos acomodados" + Environment.NewLine );
+    }
 
 
     private void setNumberOfItemsOnTOPLayout(LinearLayout linearLayout, int item_H,int item_W){

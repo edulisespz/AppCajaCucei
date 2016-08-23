@@ -8,12 +8,14 @@ import android.os.Parcelable;
  */
 public class StateMachine implements Parcelable {
 
+    public static final String KEY_DATA= "datos1";
+
     int minState;
     int presentState;
 
     boolean  Item_MetricSys;//false:international, True:imperial, US
 
-    int itemAlto;
+    public int itemAlto;
     int itemAncho;
     int itemGrosor;
     int itempeso;
@@ -93,10 +95,19 @@ public class StateMachine implements Parcelable {
         boxGrosor = in.readInt();
         boxPeso = in.readInt();
         boxAmarred = in.readByte() != 0x00;
+        boxCartonisDouble = in.readByte() != 0x00;
         mckeeCalibre = in.readInt();
         mckeeLargo = in.readInt();
         mckeeAncho = in.readInt();
         mckeeEtc = in.readInt();
+        PalleAlto = in.readInt();
+        PalleAncho = in.readInt();
+        PalleLargo = in.readInt();
+        ContainerAncho = in.readInt();
+        ContainerLargo = in.readInt();
+        ContainerAlto = in.readInt();
+        ContainerCap = in.readInt();
+        ContainerMaxpeso = in.readInt();
     }
 
     @Override
@@ -120,10 +131,19 @@ public class StateMachine implements Parcelable {
         dest.writeInt(boxGrosor);
         dest.writeInt(boxPeso);
         dest.writeByte((byte) (boxAmarred ? 0x01 : 0x00));
+        dest.writeByte((byte) (boxCartonisDouble ? 0x01 : 0x00));
         dest.writeInt(mckeeCalibre);
         dest.writeInt(mckeeLargo);
         dest.writeInt(mckeeAncho);
         dest.writeInt(mckeeEtc);
+        dest.writeInt(PalleAlto);
+        dest.writeInt(PalleAncho);
+        dest.writeInt(PalleLargo);
+        dest.writeInt(ContainerAncho);
+        dest.writeInt(ContainerLargo);
+        dest.writeInt(ContainerAlto);
+        dest.writeInt(ContainerCap);
+        dest.writeInt(ContainerMaxpeso);
     }
 
     @SuppressWarnings("unused")
@@ -138,4 +158,6 @@ public class StateMachine implements Parcelable {
             return new StateMachine[size];
         }
     };
+
+
 }
