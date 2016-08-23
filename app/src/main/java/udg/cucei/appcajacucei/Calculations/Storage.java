@@ -18,23 +18,19 @@ public class Storage {
         amount = d;
     }
 
-    int getAmount()
-    {
+    public int getAmount() {
         return amount;
     }
 
-    int getX()
-    {
+    public int getX() {
         return x;
     }
 
-    int getY()
-    {
+    public int getY() {
         return y;
     }
 
-    int getZ()
-    {
+    public int getZ() {
         return z;
     }
 

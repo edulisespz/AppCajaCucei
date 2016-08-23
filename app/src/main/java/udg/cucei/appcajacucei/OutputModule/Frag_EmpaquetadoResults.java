@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 
 import udg.cucei.appcajacucei.Calculations.ListStorage;
 import udg.cucei.appcajacucei.Calculations.Shape;
+import udg.cucei.appcajacucei.Calculations.Storage;
 import udg.cucei.appcajacucei.InputModule.StateMachine;
 import udg.cucei.appcajacucei.R;
 
@@ -45,7 +46,15 @@ public class Frag_EmpaquetadoResults extends Fragment {
             objMachime = bundle.getParcelable(StateMachine.KEY_DATA);
         }
 
-        Log.d("Frag_EmpaquetadoRes:"," machine itemAlto:" + String.valueOf(objMachime.itemAlto));
+        assert objMachime != null:"Shall never be Null, this is the obj that passes between activities/fragments";
+        Shape element = objMachime.getItemShape();
+        Shape box= objMachime.getBoxShape();
+
+
+
+
+
+
 
 
         foo_procesData();
@@ -91,20 +100,19 @@ public class Frag_EmpaquetadoResults extends Fragment {
 
         if (l.storageKind() == 1)
         {
-            Console.Write("espacio suficiente: " + Environment.NewLine);//TODO: change this
-            foreach (Storage s in l)
+            Log.i("espacio suficiente: ","");
+            for (Storage s : l)
             {
-                Console.Write("    acomoda " + s.getAmount() + " objetos de la forma x=" + s.getX()
-                        + " y=" + s.getY() + " z=" + s.getZ() + Environment.NewLine );
+                Log.i("","    acomoda " + s.getAmount() + " objetos de la forma x=" + s.getX()
+                        + " y=" + s.getY() + " z=" + s.getZ() );
             }
         }
-
         else
         {
             int e = (elements2store - 1) / l.getTotalAmount() + 1;
-            Console.Write("espacio insuficiente, necesitas " + e + " cajas" + Environment.NewLine );
+            Log.i("","espacio insuficiente, necesitas " + e + " cajas"  );
         }
-        Console.Write(l.getTotalAmount() + " elementos acomodados" + Environment.NewLine );
+        Log.i("",l.getTotalAmount() + " elementos acomodados" );
     }
 
 

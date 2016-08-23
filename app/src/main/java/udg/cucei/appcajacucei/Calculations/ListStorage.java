@@ -36,7 +36,7 @@ public class ListStorage extends ArrayList<Storage>{
 
     }
 
-    int getTotalAmount()
+    public int getTotalAmount()
     {
         return totalAmount;
     }

@@ -3,6 +3,8 @@ package udg.cucei.appcajacucei.InputModule;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import udg.cucei.appcajacucei.Calculations.Shape;
+
 /**
  * Created by Edgar Ulises on 03/06/2016.
  */
@@ -59,6 +61,25 @@ public class StateMachine implements Parcelable {
         ContainerAncho=-1;
 
     }
+
+    public Shape getItemShape(){
+        return new Shape(itemAncho,itemGrosor,itemAlto);
+    }
+
+    public Shape getBoxShape(){
+        return new Shape(boxAncho,boxGrosor,boxAlto);
+    }
+
+    public Shape getPalletShape(){
+        return new Shape(PalleAncho,PalleLargo,PalleAlto);
+    }
+
+    public Shape getContainerShape(){
+        return new Shape(ContainerAncho,ContainerLargo,ContainerAlto);
+    }
+
+
+
 
     public String TestdataItemAlto(){
 

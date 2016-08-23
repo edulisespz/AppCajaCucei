@@ -39,6 +39,8 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
     EditText editPeso;
     boolean  isVertical;
 
+    //TODO: ithink a elements2store variable is nedeed...
+
     Spinner mySpinner;
     Switch swtchMetricSys;
     IntefaceData intf_DataCallBack;
