@@ -13,17 +13,17 @@ public class Shape
         z = c;
     }
 
-    int getX()
+    public int getX()
 {
     return x;
 }
 
-    int getY()
+    public int getY()
 {
     return y;
 }
 
-    int getZ()
+    public int getZ()
 {
     return z;
 }

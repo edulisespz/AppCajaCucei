@@ -1,6 +1,8 @@
 package udg.cucei.appcajacucei.OutputModule;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -10,6 +12,8 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import udg.cucei.appcajacucei.Calculations.ListStorage;
 import udg.cucei.appcajacucei.Calculations.Shape;
@@ -24,6 +28,10 @@ public class Frag_EmpaquetadoResults extends Fragment {
     int layTop_w;
 
     StateMachine objMachime;
+
+    TextView lbl_numitems;
+    TextView lbl_volpack;
+    TextView lbl_numpacks;
 
     private View rootView;
 
@@ -46,9 +54,52 @@ public class Frag_EmpaquetadoResults extends Fragment {
             objMachime = bundle.getParcelable(StateMachine.KEY_DATA);
         }
 
+        lbl_numitems = (TextView) rootView.findViewById(R.id.lbl_numitems); //TODO: LO DEMáS
+
         assert objMachime != null:"Shall never be Null, this is the obj that passes between activities/fragments";
         Shape element = objMachime.getItemShape();
         Shape box= objMachime.getBoxShape();
+        int elements2store= objMachime.itemQuantity;
+
+        if(elements2store == -1){
+            Log.e("no number of boxes","Quiting activity");
+            Toast.makeText(getActivity(), "quantity not found!",
+                    Toast.LENGTH_SHORT).show();
+
+            getActivity().finish();
+        }else{
+
+            int TotalItems=0;
+
+
+            ListStorage l = new ListStorage(element, box, elements2store);
+
+
+
+            if (l.storageKind() == 1)
+            {
+                Log.i("espacio suficiente: ","");
+                for (Storage s : l)
+                {
+                    Log.i("","    acomoda " + s.getAmount() + " objetos de la forma x=" + s.getX()
+                            + " y=" + s.getY() + " z=" + s.getZ() );
+                }
+                TotalItems+=TotalItems;
+                lbl_numitems.setText(Integer.toString(TotalItems));
+                lbl_volpack.setText( Integer.toString( objMachime.getVolPorcentage(element,box) ) );
+
+                //lbl_numpacks.setText(Integer.toString( ));
+
+            }
+            else
+            {
+                int e = (elements2store - 1) / l.getTotalAmount() + 1;
+                Log.i("","espacio insuficiente, necesitas " + e + " cajas"  );
+            }
+            Log.i("",l.getTotalAmount() + " elementos acomodados" );
+
+
+        }
 
 
 
@@ -56,8 +107,7 @@ public class Frag_EmpaquetadoResults extends Fragment {
 
 
 
-
-        foo_procesData();
+        //foo_procesData();
 
 
 

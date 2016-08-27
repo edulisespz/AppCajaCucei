@@ -33,6 +33,8 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
 
     ImageView btnOrientation;
 
+    EditText editQuantity;
+
     EditText editAlto;
     EditText editAncho;
     EditText editGrosor;
@@ -84,6 +86,9 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
             }
         });
 
+        editQuantity = (EditText)rootView.findViewById(R.id.item_editText_Quantity);
+        editQuantity.addTextChangedListener(mTextEditorWatcher);
+
         editAlto = (EditText)rootView.findViewById(R.id.item_editText_Alto);
         editAlto.addTextChangedListener(mTextEditorWatcher);
 
@@ -115,13 +120,15 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
         @Override
         public void afterTextChanged(Editable s) {
 
-            int item_alto= checkData( editAlto.getText().toString() );
-            int item_ancho= checkData( editAncho.getText().toString() );
-            int item_grueso=checkData( editGrosor.getText().toString() );
-            int item_peso= checkData( editPeso.getText().toString() );
+            int item_Quantity = checkData(editQuantity.getText().toString());
+
+            int item_alto   = checkData(editAlto.getText().toString());
+            int item_ancho  = checkData(editAncho.getText().toString());
+            int item_grueso = checkData(editGrosor.getText().toString());
+            int item_peso   = checkData(editPeso.getText().toString());
 
 
-            intf_DataCallBack.geDataSizes_Item(item_alto, item_ancho,
+            intf_DataCallBack.geDataSizes_Item(item_Quantity,item_alto, item_ancho,
                     item_grueso, item_peso, isVertical, swtchMetricSys.isChecked() );
         }
     };
@@ -129,7 +136,7 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
 
 
     public interface IntefaceData{
-        void geDataSizes_Item(int alto, int ancho, int Grueso, int peso,boolean orientation,boolean MetricSys );
+        void geDataSizes_Item(int quantity,int alto, int ancho, int Grueso, int peso,boolean orientation,boolean MetricSys );
         void getMetricSys_Item(boolean MetricSystem);
         void ScrollViewChanger(String itemSelcted);
     }

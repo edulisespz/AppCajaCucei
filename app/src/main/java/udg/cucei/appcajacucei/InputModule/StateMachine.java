@@ -17,7 +17,9 @@ public class StateMachine implements Parcelable {
 
     boolean  Item_MetricSys;//false:international, True:imperial, US
 
-    public int itemAlto;
+    public int itemQuantity;
+
+    int itemAlto;
     int itemAncho;
     int itemGrosor;
     int itempeso;
@@ -54,6 +56,8 @@ public class StateMachine implements Parcelable {
         Item_MetricSys=false;
         boxAmarred=false;
 
+        itemQuantity=-1;
+
         itemTipe="square";
         itemOreintation=true;
 
@@ -76,6 +80,14 @@ public class StateMachine implements Parcelable {
 
     public Shape getContainerShape(){
         return new Shape(ContainerAncho,ContainerLargo,ContainerAlto);
+    }
+
+    public int getVolPorcentage(Shape item,Shape Container){
+        int aVol= item.getX() * item.getY() * item.getZ();
+        int bVol= Container.getX() * Container.getY() * Container.getZ();
+
+        return (aVol/bVol) * 100;
+
     }
 
 
@@ -105,6 +117,7 @@ public class StateMachine implements Parcelable {
         minState = in.readInt();
         presentState = in.readInt();
         Item_MetricSys = in.readByte() != 0x00;
+        itemQuantity=in.readInt();
         itemAlto = in.readInt();
         itemAncho = in.readInt();
         itemGrosor = in.readInt();
@@ -141,6 +154,7 @@ public class StateMachine implements Parcelable {
         dest.writeInt(minState);
         dest.writeInt(presentState);
         dest.writeByte((byte) (Item_MetricSys ? 0x01 : 0x00));
+        dest.writeInt(itemQuantity);
         dest.writeInt(itemAlto);
         dest.writeInt(itemAncho);
         dest.writeInt(itemGrosor);

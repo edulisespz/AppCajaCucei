@@ -374,7 +374,9 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
 
     // Interface Functions
-    public void geDataSizes_Item(int alto, int ancho, int Grueso, int peso,boolean orientation, boolean MetricSys ){
+    public void geDataSizes_Item(int quantity,int alto, int ancho, int Grueso, int peso,boolean orientation, boolean MetricSys ){
+        machine.itemQuantity=quantity;
+
         machine.itemAlto= alto;
         machine.itemAncho= ancho;
         machine.itemGrosor= Grueso;
