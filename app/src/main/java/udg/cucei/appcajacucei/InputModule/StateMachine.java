@@ -2,6 +2,7 @@ package udg.cucei.appcajacucei.InputModule;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import udg.cucei.appcajacucei.Calculations.Shape;
 
@@ -83,10 +84,14 @@ public class StateMachine implements Parcelable {
     }
 
     public int getVolPorcentage(Shape item,Shape Container){
-        int aVol= item.getX() * item.getY() * item.getZ();
-        int bVol= Container.getX() * Container.getY() * Container.getZ();
+        float aVol= item.getX() * item.getY() * item.getZ();
+        float bVol= Container.getX() * Container.getY() * Container.getZ();
 
-        return (aVol/bVol) * 100;
+        //Log.i("volumn"," aVol:"+Float.toString(aVol ) +" bVol:"+ Float.toString(bVol) +" return: " + Float.toString( (aVol/bVol) * 100) );
+
+        float aux= (aVol/bVol) * 100;
+
+        return (int) aux;
 
     }
 

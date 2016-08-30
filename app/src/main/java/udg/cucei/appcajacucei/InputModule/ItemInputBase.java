@@ -1,6 +1,7 @@
 package udg.cucei.appcajacucei.InputModule;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -21,7 +23,8 @@ import udg.cucei.appcajacucei.OutputModule.Frag_EntarimadoResults;
 import udg.cucei.appcajacucei.OutputModule.ReportActivity;
 import udg.cucei.appcajacucei.R;
 
-public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData,Frag_BoxSize.IntefaceData_Box,Frag_McKee.Inteface_Data_McKee,Frag_Pallet.Inteface_Data_fragPallet,Frag_Container.Inteface_Data_fragContainer {
+public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData,Frag_BoxSize.IntefaceData_Box,
+        Frag_McKee.Inteface_Data_McKee,Frag_Pallet.Inteface_Data_fragPallet,Frag_Container.Inteface_Data_fragContainer {
 
     StateMachine machine;
     ImageView ProgresBar;
@@ -371,6 +374,124 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
 
     }// end onCreate
+
+    @Override
+    public void onBackPressed()
+    {
+        if(machine.presentState==machine.minState){
+            this.finish();
+
+        }else if(machine.presentState==1 && machine.minState<= machine.presentState-1){
+            Frag_ItemSize item_size = new Frag_ItemSize();
+            transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_Holder, item_size);
+            transaction.commit();
+            ProgresBar.setImageResource(R.drawable.input_module_barra);
+            InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_caja);
+            BTNprev.setVisibility(View.INVISIBLE);
+
+            machine.presentState=0;
+
+        }else if(machine.presentState==2 && machine.minState<= machine.presentState-1){
+            Frag_BoxSize box_size = new Frag_BoxSize();
+            transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_Holder, box_size);
+            transaction.commit();
+            InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_caja_master);
+
+            if(machine.minState==machine.presentState-1){
+                BTNprev.setVisibility(View.INVISIBLE);
+            }
+
+
+            machine.presentState=1;
+
+        }else if(machine.presentState==3 && machine.minState<= machine.presentState-1){
+            Frag_McKee mckee = new Frag_McKee();
+            transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_Holder,mckee);
+            transaction.commit();
+            InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_mckee);
+            ProgresBar.setVisibility(View.VISIBLE);
+
+
+            machine.presentState=2;
+
+        }else if(machine.presentState==4 && machine.minState<= machine.presentState-1){
+            Frag_EmpaquetadoResults maqueta = new Frag_EmpaquetadoResults();
+            //pass the MAchine object
+            Bundle bund = new Bundle();
+            bund.putParcelable(StateMachine.KEY_DATA,machine);
+            maqueta.setArguments(bund);
+
+            transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_Holder,maqueta);
+            transaction.commit();
+            ProgresBar.setVisibility(View.GONE);
+            InputBaseBackGround.setBackgroundResource(R.color.MaquetaBackgroundColor);
+            BTNprev.setVisibility(View.VISIBLE);
+
+            machine.presentState=3;
+
+        }else if(machine.presentState==5 && machine.minState<= machine.presentState-1){
+            Frag_Pallet palletSize = new Frag_Pallet();
+            transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_Holder,palletSize);
+            transaction.commit();
+            ProgresBar.setImageResource(R.drawable.input_module_barra_75);
+            ProgresBar.setVisibility(View.VISIBLE);
+            InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_pallet);
+
+            if(machine.minState==machine.presentState-1){
+                BTNprev.setVisibility(View.INVISIBLE);
+            }
+
+            machine.presentState=4;
+
+        }else if(machine.presentState==6 && machine.minState<= machine.presentState-1){
+            Frag_EntarimadoResults results = new Frag_EntarimadoResults();
+            transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_Holder, results);
+            transaction.commit();
+            ProgresBar.setVisibility(View.GONE);
+            InputBaseBackGround.setBackgroundResource(R.color.MaquetaBackgroundColor);
+            BTNprev.setVisibility(View.VISIBLE);
+
+            machine.presentState = 5;
+
+        }else if(machine.presentState==7 && machine.minState<= machine.presentState-1){
+
+            Frag_Container container = new Frag_Container();
+            transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_Holder, container);
+            transaction.commit();
+            ProgresBar.setImageResource(R.drawable.input_module_barra_100);
+            ProgresBar.setVisibility(View.VISIBLE);
+            InputBaseBackGround.setBackgroundResource(R.drawable.input_module_fondo_contenedor);
+
+            if(machine.minState==machine.presentState-1){
+                BTNprev.setVisibility(View.INVISIBLE);
+            }
+
+            machine.presentState = 6;
+
+
+        }
+
+        Log.i( "Min_state ",Integer.toString(machine.minState) );
+        Log.i( "Pres_state ",Integer.toString(machine.presentState) );
+
+    } //OnBackPressed
+
+    @Override
+    public boolean onKeyLongPress(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            this.finish();
+            return true;
+        }
+        return super.onKeyLongPress(keyCode, event);
+    }
 
 
     // Interface Functions

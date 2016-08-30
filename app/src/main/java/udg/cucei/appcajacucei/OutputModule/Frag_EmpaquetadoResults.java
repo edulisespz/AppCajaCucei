@@ -55,6 +55,8 @@ public class Frag_EmpaquetadoResults extends Fragment {
         }
 
         lbl_numitems = (TextView) rootView.findViewById(R.id.lbl_numitems); //TODO: LO DEMáS
+        lbl_volpack = (TextView) rootView.findViewById(R.id.lbl_volpack);
+        lbl_numpacks = (TextView) rootView.findViewById(R.id.lbl_numPacks);
 
         assert objMachime != null:"Shall never be Null, this is the obj that passes between activities/fragments";
         Shape element = objMachime.getItemShape();
@@ -62,14 +64,13 @@ public class Frag_EmpaquetadoResults extends Fragment {
         int elements2store= objMachime.itemQuantity;
 
         if(elements2store == -1){
-            Log.e("no number of boxes","Quiting activity");
+            Log.e("no number of items","Quiting activity");
             Toast.makeText(getActivity(), "quantity not found!",
                     Toast.LENGTH_SHORT).show();
 
-            getActivity().finish();
+            //getActivity().finish(); //TODO: add later
         }else{
-
-            int TotalItems=0;
+            int num_ofarrangements=0;
 
 
             ListStorage l = new ListStorage(element, box, elements2store);
@@ -83,12 +84,10 @@ public class Frag_EmpaquetadoResults extends Fragment {
                 {
                     Log.i("","    acomoda " + s.getAmount() + " objetos de la forma x=" + s.getX()
                             + " y=" + s.getY() + " z=" + s.getZ() );
+                    num_ofarrangements++;
                 }
-                TotalItems+=TotalItems;
-                lbl_numitems.setText(Integer.toString(TotalItems));
-                lbl_volpack.setText( Integer.toString( objMachime.getVolPorcentage(element,box) ) );
 
-                //lbl_numpacks.setText(Integer.toString( ));
+
 
             }
             else
@@ -97,6 +96,12 @@ public class Frag_EmpaquetadoResults extends Fragment {
                 Log.i("","espacio insuficiente, necesitas " + e + " cajas"  );
             }
             Log.i("",l.getTotalAmount() + " elementos acomodados" );
+
+            lbl_numitems.setText( String.format("%d",l.getTotalAmount() ) );
+
+            lbl_volpack.setText( Integer.toString( objMachime.getVolPorcentage(element,box) ) + "%" );
+
+            lbl_numpacks.setText(Integer.toString( elements2store ));
 
 
         }
