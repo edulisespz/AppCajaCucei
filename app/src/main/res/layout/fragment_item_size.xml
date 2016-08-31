@@ -93,7 +93,8 @@
                 android:id="@+id/item_editText_Quantity"
                 android:layout_gravity="center_horizontal"
                 android:hint="CANTIDAD"
-                android:gravity="center" />
+                android:gravity="center"
+                />
 
             <Space
                 android:layout_width="match_parent"

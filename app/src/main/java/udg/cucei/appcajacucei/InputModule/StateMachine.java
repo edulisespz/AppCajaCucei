@@ -20,6 +20,12 @@ public class StateMachine implements Parcelable {
 
     public int itemQuantity;
 
+    //----
+    int numitemsPerPacage;
+    float VolUsedPerPacage;
+    int TotalOfContainersUsed;
+    //----
+
     int itemAlto;
     int itemAncho;
     int itemGrosor;
@@ -83,15 +89,31 @@ public class StateMachine implements Parcelable {
         return new Shape(ContainerAncho,ContainerLargo,ContainerAlto);
     }
 
-    public int getVolPorcentage(Shape item,Shape Container){
+    public float getVolPorcentage(Shape item,Shape Container, int items){
         float aVol= item.getX() * item.getY() * item.getZ();
         float bVol= Container.getX() * Container.getY() * Container.getZ();
 
-        //Log.i("volumn"," aVol:"+Float.toString(aVol ) +" bVol:"+ Float.toString(bVol) +" return: " + Float.toString( (aVol/bVol) * 100) );
+        int numberofitemsperbox = (int)Math.floor(bVol/aVol);
 
-        float aux= (aVol/bVol) * 100;
+        int preVol = (int)(aVol*numberofitemsperbox);
 
-        return (int) aux;
+        return (preVol/bVol)*100;
+
+    }
+
+    public int getnumberOfContainers(Shape item,Shape Container, int elementsToStore){
+        float aVol= item.getX() * item.getY() * item.getZ();
+        float bVol= Container.getX() * Container.getY() * Container.getZ();
+
+        return (int) Math.ceil((elementsToStore/ (bVol/aVol) ));
+
+    }
+
+    public int getnumberOfitemsinBoxes(Shape item,Shape Container){
+        float aVol= item.getX() * item.getY() * item.getZ();
+        float bVol= Container.getX() * Container.getY() * Container.getZ();
+
+        return (int) Math.floor(bVol/aVol);
 
     }
 
@@ -123,6 +145,9 @@ public class StateMachine implements Parcelable {
         presentState = in.readInt();
         Item_MetricSys = in.readByte() != 0x00;
         itemQuantity=in.readInt();
+        numitemsPerPacage = in.readInt();
+        VolUsedPerPacage = in.readFloat();
+        TotalOfContainersUsed = in.readInt();
         itemAlto = in.readInt();
         itemAncho = in.readInt();
         itemGrosor = in.readInt();
@@ -160,6 +185,9 @@ public class StateMachine implements Parcelable {
         dest.writeInt(presentState);
         dest.writeByte((byte) (Item_MetricSys ? 0x01 : 0x00));
         dest.writeInt(itemQuantity);
+        dest.writeInt(numitemsPerPacage);
+        dest.writeFloat(VolUsedPerPacage);
+        dest.writeInt(TotalOfContainersUsed);
         dest.writeInt(itemAlto);
         dest.writeInt(itemAncho);
         dest.writeInt(itemGrosor);

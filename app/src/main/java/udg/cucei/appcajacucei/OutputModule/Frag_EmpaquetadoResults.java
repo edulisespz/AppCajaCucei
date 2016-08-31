@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 import udg.cucei.appcajacucei.Calculations.ListStorage;
 import udg.cucei.appcajacucei.Calculations.Shape;
 import udg.cucei.appcajacucei.Calculations.Storage;
@@ -63,6 +65,10 @@ public class Frag_EmpaquetadoResults extends Fragment {
         Shape box= objMachime.getBoxShape();
         int elements2store= objMachime.itemQuantity;
 
+        //int elements2store= objMachime.getnumberOfitemsinBoxes(element, box);
+
+        //int elements2store= 500 / objMachime.getnumberOfitemsinBoxes(element, box); //500 numItems
+
         if(elements2store == -1){
             Log.e("no number of items","Quiting activity");
             Toast.makeText(getActivity(), "quantity not found!",
@@ -72,10 +78,7 @@ public class Frag_EmpaquetadoResults extends Fragment {
         }else{
             int num_ofarrangements=0;
 
-
             ListStorage l = new ListStorage(element, box, elements2store);
-
-
 
             if (l.storageKind() == 1)
             {
@@ -87,8 +90,6 @@ public class Frag_EmpaquetadoResults extends Fragment {
                     num_ofarrangements++;
                 }
 
-
-
             }
             else
             {
@@ -97,11 +98,13 @@ public class Frag_EmpaquetadoResults extends Fragment {
             }
             Log.i("",l.getTotalAmount() + " elementos acomodados" );
 
-            lbl_numitems.setText( String.format("%d",l.getTotalAmount() ) );
+            //lbl_numitems.setText( String.format("%d",l.getTotalAmount() ) );
+            lbl_numitems.setText( String.format("%d",objMachime.getnumberOfitemsinBoxes(element, box) ) );
 
-            lbl_volpack.setText( Integer.toString( objMachime.getVolPorcentage(element,box) ) + "%" );
+            //this line seems triki, i put the locale canada to make 2.66 instead of 2,66
+            lbl_volpack.setText( String.format(Locale.CANADA , "%1$.2f", objMachime.getVolPorcentage(element,box,elements2store) ) + " %" );
 
-            lbl_numpacks.setText(Integer.toString( elements2store ));
+            lbl_numpacks.setText( Integer.toString( objMachime.getnumberOfContainers(element,box, elements2store) ) );
 
 
         }
