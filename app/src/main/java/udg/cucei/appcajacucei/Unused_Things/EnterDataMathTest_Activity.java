@@ -29,6 +29,9 @@ public class EnterDataMathTest_Activity extends AppCompatActivity {
 
                 //deleted some things
 
+                int variablequeagregue = 0;
+                variablequeagregue++;
+
             }
         });
 
