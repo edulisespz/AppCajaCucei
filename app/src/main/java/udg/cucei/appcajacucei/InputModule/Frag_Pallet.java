@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.util.StringBuilderPrinter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,8 @@ import udg.cucei.appcajacucei.R;
 public class Frag_Pallet extends Fragment {
 
     Inteface_Data_fragPallet intfPallet;
+
+    StateMachine objMachime;
 
     Spinner spn_palletSizes;
     TextView lbl_pall_largo;
@@ -87,58 +90,47 @@ public class Frag_Pallet extends Fragment {
 
     private void saveSelectedPallet(int P){
 
-        switch (P){
+        switch (P) {
             case 0:
                 //if(flag_notingSelcted) {
                 //    flag_notingSelcted = false;
                 //}
                 //else {//TARIMA
-                    lbl_pall_Alto.setText("ALTO");
-                    lbl_pall_largo.setText("LARGO");
-                    lbl_pall_Ancho.setText("ANCHO");
+                lbl_pall_Alto.setText("ALTO");
+                lbl_pall_largo.setText("LARGO");
+                lbl_pall_Ancho.setText("ANCHO");
 
-                    intfPallet.geDatatype_Pallet(-1,-1,-1);
+                intfPallet.geDatatype_Pallet(-1, -1, -1);
 
-                    flag_notingSelcted = true;
+                flag_notingSelcted = true;
                 //}
 
                 break;
-            case 1://EUR
-                lbl_pall_Alto.setText("200mm");
-                lbl_pall_largo.setText("200mm");
-                lbl_pall_Ancho.setText("200mm");
+            //TODO: change the strings later
 
-                intfPallet.geDatatype_Pallet(200,200,200);
+            //TODO: if you change the values, also need in the xml
+            case 1://EUR
+                setPalletValues(200, 200, 200);
                 break;
             case 2://EUR2
-                lbl_pall_Alto.setText("300mm");
-                lbl_pall_largo.setText("150mm");
-                lbl_pall_Ancho.setText("100mm");
-                intfPallet.geDatatype_Pallet(300,150,100);
+
+                setPalletValues(300,150,100);
                 break;
             case 3://EUR6
-                lbl_pall_Alto.setText("200mm");
-                lbl_pall_largo.setText("150mm");
-                lbl_pall_Ancho.setText("400mm");
-                intfPallet.geDatatype_Pallet(200,150,400);
+
+                setPalletValues(200,150,400);
                 break;
             case 4://North America
-                lbl_pall_Alto.setText("200mm");
-                lbl_pall_largo.setText("400mm");
-                lbl_pall_Ancho.setText("150mm");
-                intfPallet.geDatatype_Pallet(200,400,150);
+
+                setPalletValues(200,400,150);
                 break;
             case 5://Australia
-                lbl_pall_Alto.setText("200mm");
-                lbl_pall_largo.setText("200mm");
-                lbl_pall_Ancho.setText("200mm");
-                intfPallet.geDatatype_Pallet(200,200,200);
+
+                setPalletValues(200,200,200);
                 break;
             case 6://Asia
-                lbl_pall_Alto.setText("400mm");
-                lbl_pall_largo.setText("150mm");
-                lbl_pall_Ancho.setText("200mm");
-                intfPallet.geDatatype_Pallet(400,150,200);
+
+                setPalletValues(400,150,200);
                 break;
         }
         if(P!=0){
@@ -149,6 +141,17 @@ public class Frag_Pallet extends Fragment {
 
         //test
         Log.d("selected pos",String.valueOf(P) );
+    }
+
+
+    private void setPalletValues(int x,int y, int z){
+        String aux="mm";
+
+        lbl_pall_Alto.setText(Integer.toString(x) + aux);
+        lbl_pall_largo.setText(Integer.toString(y) + aux);
+        lbl_pall_Ancho.setText(Integer.toString(z) + aux);
+
+        intfPallet.geDatatype_Pallet(x,y,z);
     }
 
 }

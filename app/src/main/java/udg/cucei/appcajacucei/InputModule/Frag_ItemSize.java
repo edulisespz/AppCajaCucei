@@ -175,7 +175,7 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
         switch (position){
             case 0:
                 editAncho.setHint("ANCHO");
-                editGrosor.setHint("GROSOR");
+                editGrosor.setHint("LARGO");
                 editPeso.setHint("PESO");
                 editGrosor.setVisibility(View.VISIBLE);
 

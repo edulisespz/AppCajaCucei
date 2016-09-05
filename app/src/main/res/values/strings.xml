@@ -7,7 +7,17 @@
 
     <!-- pallet spiner TODO: add languaje later -->
 
+    <!-- pallet spiner TODO: if you change the array you need to change the values in the code -->
     <string-array name="pallets_options">
+        <item>0: TARIMA </item>
+        <item>1: 200 X 200 X 200 mm</item>
+        <item>2: 300 X 150 X 100 mm </item>
+        <item>3: 200 X 150 X 400 mm </item>
+        <item>4: 200 X 400 X 150 mm </item>
+        <item>5: 200 X 200 X 200 mm</item>
+        <item>6: 400 X 150 X 200 mm</item>
+    </string-array>
+    <!--
         <item>0: TARIMA </item>
         <item>1: EUR </item>
         <item>2: EUR2 </item>
@@ -15,7 +25,8 @@
         <item>4: North America </item>
         <item>5: Australia</item>
         <item>6: Asia</item>
-    </string-array>
+    -->
+
 
     <string-array name="container_options">
         <item>0: CONTENEDOR </item>

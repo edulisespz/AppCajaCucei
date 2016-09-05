@@ -323,6 +323,11 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
                 }else if(machine.presentState==5 && machine.minState<= machine.presentState-1){
                     Frag_Pallet palletSize = new Frag_Pallet();
+                    //pass the MAchine object
+                    Bundle bund = new Bundle();
+                    bund.putParcelable(StateMachine.KEY_DATA,machine);
+                    palletSize.setArguments(bund);
+
                     transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_Holder,palletSize);
                     transaction.commit();
