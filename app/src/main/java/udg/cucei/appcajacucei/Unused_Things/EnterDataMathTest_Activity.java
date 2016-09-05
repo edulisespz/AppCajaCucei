@@ -41,6 +41,9 @@ public class EnterDataMathTest_Activity extends AppCompatActivity {
                 //buttonTest.setAlpha(.5f);
                 //buttonTest.setClickable(false);
 
+                int variablequeagregue = 0;
+                variablequeagregue++;
+
             }
         });
 
