@@ -143,7 +143,7 @@
                 android:background="@drawable/edit_text_shape"
                 android:id="@+id/item_editText_Grosor"
                 android:layout_gravity="center_horizontal"
-                android:hint="GROSOR"
+                android:hint="LARGO"
                 android:gravity="center" />
 
             <Space
