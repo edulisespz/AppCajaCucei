@@ -69,6 +69,17 @@ public class Frag_EmpaquetadoResults extends Fragment {
 
         //int elements2store= 500 / objMachime.getnumberOfitemsinBoxes(element, box); //500 numItems
 
+        //
+        //
+        if( objMachime.itemItsBigger(element, box)==true ){
+            Toast.makeText(getActivity(), "the item its bigger than the box!!",
+                    Toast.LENGTH_SHORT).show();
+            getActivity().finish();
+        }
+        //
+        //
+        
+
         if(elements2store == -1){
             Log.e("no number of items","Quiting activity");
             Toast.makeText(getActivity(), "quantity not found!",
@@ -76,33 +87,34 @@ public class Frag_EmpaquetadoResults extends Fragment {
 
             //getActivity().finish(); //TODO: add later
         }else{
-            int num_ofarrangements=0;
+            //int num_ofarrangements=0;
+            //
+            //ListStorage l = new ListStorage(element, box, elements2store);
+            //
+            ////if (l.storageKind() == 1)
+            //{
+            //    Log.i("espacio suficiente: ","");
+            //    for (Storage s : l)
+            //    {
+            //        Log.i("","    acomoda " + s.getAmount() + " objetos de la forma x=" + s.getX()
+            //                + " y=" + s.getY() + " z=" + s.getZ() );
+            //        num_ofarrangements++;
+            //    }
+            //
+            //}
+            //else
+            //{
+            //    int e = (elements2store - 1) / l.getTotalAmount() + 1;
+            //    Log.i("","espacio insuficiente, necesitas " + e + " cajas"  );
+            //}
+            //Log.i("",l.getTotalAmount() + " elementos acomodados" );
 
-            ListStorage l = new ListStorage(element, box, elements2store);
-
-            if (l.storageKind() == 1)
-            {
-                Log.i("espacio suficiente: ","");
-                for (Storage s : l)
-                {
-                    Log.i("","    acomoda " + s.getAmount() + " objetos de la forma x=" + s.getX()
-                            + " y=" + s.getY() + " z=" + s.getZ() );
-                    num_ofarrangements++;
-                }
-
-            }
-            else
-            {
-                int e = (elements2store - 1) / l.getTotalAmount() + 1;
-                Log.i("","espacio insuficiente, necesitas " + e + " cajas"  );
-            }
-            Log.i("",l.getTotalAmount() + " elementos acomodados" );
 
             //lbl_numitems.setText( String.format("%d",l.getTotalAmount() ) );
             lbl_numitems.setText( String.format("%d",objMachime.getnumberOfitemsinBoxes(element, box) ) );
 
             //this line seems triki, i put the locale canada to make 2.66 instead of 2,66
-            lbl_volpack.setText( String.format(Locale.CANADA , "%1$.2f", objMachime.getVolPorcentage(element,box,elements2store) ) + " %" );
+            lbl_volpack.setText( String.format(Locale.CANADA , "%1$.2f", objMachime.getVolPorcentage(element,box) ) + " %" );
 
             lbl_numpacks.setText( Integer.toString( objMachime.getnumberOfContainers(element,box, elements2store) ) );
 

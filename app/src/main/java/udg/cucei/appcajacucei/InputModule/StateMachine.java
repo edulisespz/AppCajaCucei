@@ -89,7 +89,7 @@ public class StateMachine implements Parcelable {
         return new Shape(ContainerAncho,ContainerLargo,ContainerAlto);
     }
 
-    public float getVolPorcentage(Shape item,Shape Container, int items){
+    public float getVolPorcentage(Shape item,Shape Container){
         float aVol= item.getX() * item.getY() * item.getZ();
         float bVol= Container.getX() * Container.getY() * Container.getZ();
 
@@ -114,6 +114,18 @@ public class StateMachine implements Parcelable {
         float bVol= Container.getX() * Container.getY() * Container.getZ();
 
         return (int) Math.floor(bVol/aVol);
+
+    }
+
+    public boolean itemItsBigger(Shape item,Shape Container){
+        float aVol= item.getX() * item.getY() * item.getZ();
+        float bVol= Container.getX() * Container.getY() * Container.getZ();
+
+        if (aVol>bVol){
+            return true;
+        }else{
+            return false;
+        }
 
     }
 
