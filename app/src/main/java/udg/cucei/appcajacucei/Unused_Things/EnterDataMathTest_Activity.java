@@ -27,19 +27,7 @@ public class EnterDataMathTest_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //ListStorage box = new ListStorage(-1);//constructor with number of elemnts
-                //int result = box.StorageKind(3, 5, 1, 6, 8, 1);
-                //int numofAreas = box.size();
-                //Log.d("num of layers", String.valueOf(numofAreas));
-                //
-                //int Numofelemts = box.get(0).amount;
-                //
-                //Log.d("result", String.valueOf(result));
-                //Log.d("num of elemnts", String.valueOf(Numofelemts));
-                //
-                //// TODO: remove after fixing the algoritm
-                //buttonTest.setAlpha(.5f);
-                //buttonTest.setClickable(false);
+                //deleted some things
 
             }
         });
