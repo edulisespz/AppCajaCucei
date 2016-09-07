@@ -22,11 +22,6 @@ public class Main2Activity_menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_activity_menu);
 
-        TextView lblTitle = (TextView) findViewById(R.id.TextView_Title);
-        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Gotham-Light.otf");
-        assert lblTitle != null;
-        lblTitle.setTypeface(type);
-
         ImageButton btnBottle = (ImageButton) findViewById(R.id.imageButton_MenuBottle);
         assert btnBottle != null;
         btnBottle.setOnClickListener(new View.OnClickListener() {

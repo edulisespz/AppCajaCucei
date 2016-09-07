@@ -31,8 +31,6 @@ public class EnterDataMathTest_Activity extends AppCompatActivity {
 
 
 
-                int variabledos=0;
-                variabledos--;
 
             }
         });
