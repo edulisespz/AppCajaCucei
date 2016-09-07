@@ -17,7 +17,6 @@ public class StateMachine implements Parcelable {
     int presentState;
 
     boolean  Item_MetricSys;//false:international, True:imperial, US
-
     public int itemQuantity;
 
     //----
@@ -45,7 +44,7 @@ public class StateMachine implements Parcelable {
     int mckeeAncho;
     int mckeeEtc;
 
-    //TODO: add parceable code
+
     int PalleAlto;
     int PalleAncho;
     int PalleLargo;
@@ -57,6 +56,45 @@ public class StateMachine implements Parcelable {
     int ContainerMaxpeso;
 
 
+    public StateMachine( StateMachine objtforcopy){
+        this.Item_MetricSys = objtforcopy.Item_MetricSys;
+        this.itemQuantity = objtforcopy.itemQuantity;
+
+        this.numitemsPerPacage = objtforcopy.numitemsPerPacage;
+        this.VolUsedPerPacage = objtforcopy.VolUsedPerPacage;
+        this.TotalOfContainersUsed = objtforcopy.TotalOfContainersUsed;
+
+        this.itemAlto = objtforcopy.itemAlto;
+        this.itemAncho = objtforcopy.itemAncho;
+        this.itemGrosor = objtforcopy.itemGrosor;
+        this.itempeso = objtforcopy.itempeso;
+        this.itemOreintation = objtforcopy.itemOreintation;
+        this.itemTipe = objtforcopy.itemTipe;
+
+        this.boxAlto = objtforcopy.boxAlto;
+        this.boxAncho = objtforcopy.boxAncho;
+        this.boxGrosor = objtforcopy.itemGrosor;
+        this.boxPeso = objtforcopy.boxPeso;
+        this.boxAmarred = objtforcopy.boxAmarred;
+        this.boxCartonisDouble = objtforcopy.boxCartonisDouble;
+
+        this.mckeeCalibre  = objtforcopy.mckeeCalibre;
+        this.mckeeLargo = objtforcopy.mckeeLargo;
+        this.mckeeAncho = objtforcopy.mckeeAncho;
+        this.mckeeEtc = objtforcopy.mckeeEtc;
+
+        this.PalleAlto = objtforcopy.PalleAlto;
+        this.PalleAncho = objtforcopy.PalleAncho;
+        this.PalleLargo = objtforcopy.PalleLargo;
+
+        this.ContainerAncho = objtforcopy.ContainerAncho;
+        this.ContainerLargo = objtforcopy.ContainerLargo;
+        this.ContainerAlto = objtforcopy.ContainerAlto;
+        this.ContainerCap = objtforcopy.ContainerCap;
+        this.ContainerMaxpeso = objtforcopy.ContainerMaxpeso;
+
+
+    }
 
 
     public StateMachine(){

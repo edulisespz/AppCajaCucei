@@ -1,4 +1,4 @@
-package udg.cucei.appcajacucei.OutputModule;
+package udg.cucei.appcajacucei.Unused_Things;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +9,10 @@ import udg.cucei.appcajacucei.InputModule.StateMachine;
 import udg.cucei.appcajacucei.R;
 
 
+/*
+    this class was a test for sending and recibing object trougth android,
+    i dont find it useful but i keep it just in case
+*/
 
 public class ReportActivity extends AppCompatActivity {
 

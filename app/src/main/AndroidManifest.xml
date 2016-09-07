@@ -49,7 +49,7 @@
             android:name=".InputModule.ItemInputBase"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".OutputModule.ReportActivity"/>
+        <activity android:name=".Unused_Things.ReportActivity"/>
         <activity android:name=".PdfModule.FileChooser">
         </activity>
         <activity android:name=".OutputModule.Box_egg_Activity">

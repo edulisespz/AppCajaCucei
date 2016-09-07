@@ -18,6 +18,8 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import udg.cucei.appcajacucei.InputModule.StateMachine;
+
 /**
  * Created by Edgar Ulises on 25/07/2016.
  */
@@ -25,7 +27,9 @@ public class PdfClass {
 
 
 
-    public void createPDF(Context context){
+    public void createPDF(Context context, StateMachine ref_sMachine){
+
+        StateMachine copyof_sMachine = new StateMachine(ref_sMachine); // the copy of the object its done
 
         try {
 
@@ -47,6 +51,7 @@ public class PdfClass {
             //Step 3
             document.open();
             //Step 4 Add content
+            // this is the part when you wold add the data of copyof_sMachine
             document.add(new Paragraph("titulo"));
             document.add(new Paragraph("body"));
 

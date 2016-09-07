@@ -58,7 +58,7 @@ public class FileChooser extends AppCompatActivity {
 
 
         final StableArrayAdapter adapter = new StableArrayAdapter(this,
-                android.R.layout.simple_list_item_1, list);
+                R.layout.list_item_filechooser, list);
         listview.setAdapter(adapter);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
