@@ -95,11 +95,11 @@ public class Frag_Container extends Fragment {
                 //    flag_notingSelcted = false;
                 //}
                 //else {//TARIMA
-                    lbl_cont_Alto.setText("ANCHO");
-                    lbl_cont_largo.setText("LARGO");
-                    lbl_cont_Ancho.setText("ALTO");
-                    lbl_cont_Cap.setText("CAPACIDAD");
-                    lbl_cont_Peso.setText("PESO MAX");
+                    lbl_cont_Alto.setText(R.string.item_Alto);
+                    lbl_cont_largo.setText(R.string.item_LARGO);
+                    lbl_cont_Ancho.setText(R.string.item_ancho);
+                    lbl_cont_Cap.setText(R.string.frag_container_capacidad);
+                    lbl_cont_Peso.setText(R.string.frag_container_max_peso);
 
 
                     intfContainer.geDatatype_Container(-1,-1,-1,-1,-1);

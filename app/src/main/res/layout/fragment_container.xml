@@ -25,7 +25,7 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DIMENSIONES"
+            android:text="@string/Item_DIMENSIONES"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#fcfcfc"
             android:layout_centerVertical="true"
@@ -70,7 +70,7 @@
             android:id="@+id/textView_frg_cont_ancho_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="ANCHO"/>
+            android:text="@string/item_ancho"/>
 
         <Space
             android:layout_width="match_parent"
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
-            android:text="LARGO"
+            android:text="@string/item_LARGO"
             android:id="@+id/textView_frg_cont_largo_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"/>
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
-            android:text="ALTO"
+            android:text="@string/item_Alto"
             android:id="@+id/textView_frg_cont_alto_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"/>
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
-            android:text="CAPACIDAD"
+            android:text="@string/frag_container_capacidad"
             android:id="@+id/textView_frg_cont_capacidad_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"/>
@@ -131,7 +131,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
-            android:text="PESO MAX"
+            android:text="@string/frag_container_max_peso"
             android:id="@+id/textView_frg_cont_pesomax_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"/>

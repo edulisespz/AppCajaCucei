@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AppCajaCucei</string>
-    <string name="TestLang">lenguaje en español</string>
-    <string name="TestLang2Key">Español2</string>
+
+
     <string name="Language_selected">Español esta selecionado</string>
+    <string name="Item_DIMENSIONES">DIMENSIONES</string>
+    <string name="sis_international">Internacional </string>
+    <string name="Sis_Ingles">Imperial</string>
+    <string name="item_CANTIDAD">CANTIDAD</string>
+    <string name="item_Alto">ALTO</string>
+    <string name="item_ancho">ANCHO</string>
+    <string name="item_LARGO">LARGO</string>
+    <string name="item_WEIGHT">PESO</string>
+    <string name="item_DIAMETRO">DIAMETRO</string>
+    <string name="item_radioMAYOR">RADIO MAYOR</string>
+    <string name="item_radioMENOR">RADIO MENOR</string>
+    <string name="box_internas">INTERNAS</string>
+    <string name="mckee_valorMckee">VALOR MACKEE</string>
+    <string name="mckee_calibre">CALIBRE</string>
+    <string name="mckee_etcValue">ETC</string>
+    <string name="fraf_empa_envasesperpaquete">Envases por paquete:</string>
+    <string name="frag_empa_Volumenusado">Volumen usado:</string>
+    <string name="frag_empa_paquetesUsados">Paquetes</string>
+    <string name="itemMasGrandequeCaja">El item es mas grande que la caja!</string>
+    <string name="cantidadMissing">No se encontro el valor cantidad!</string>
+    <string name="inputBase_continuar_Crear">Desea continuar agregando datos o crear el reporte con los datos actuales?</string>
+    <string name="inputBase_continuar">continuar</string>
+    <string name="inputBase_crear">crear Reporte</string>
+    <string name="inputBase_plzSelectOpt">porfavor seleccione una opcion</string>
+    <string name="Spinner_pallet">0: TARIMA</string>
+    <string name="frag_container_capacidad">CAPACIDAD</string>
+    <string name="frag_container_max_peso">PESO MAX</string>
+    <string name="frag_entari_volumen">Volumen</string>
+    <string name="frag_entari_area">Area</string>
+    <string name="frag_entari_cajPpallet">Cajas por cama</string>
+    <string name="frag_entari_cajas">Cajas</string>
+    <string name="frag_entari_piezas">Piezas</string>
+    <string name="frag_ContainerRes_numPallets">Camas</string>
 </resources>

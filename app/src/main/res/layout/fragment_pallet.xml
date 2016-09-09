@@ -25,7 +25,7 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DIMENSIONES"
+            android:text="@string/Item_DIMENSIONES"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#fcfcfc"
             android:layout_centerVertical="true"
@@ -70,7 +70,7 @@
             android:id="@+id/textView_frg_pall_larg_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="LARGO"/>
+            android:text="@string/item_LARGO"/>
 
         <Space
             android:layout_width="match_parent"
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
-            android:text="ALTO"
+            android:text="@string/item_Alto"
             android:id="@+id/textView_frg_pall_alto_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"/>
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:background="@drawable/edit_text_shape"
-            android:text="ANCHO"
+            android:text="@string/item_ancho"
             android:id="@+id/textView_frg_pall_ancho_lbl"
             android:layout_gravity="center_horizontal"
             android:gravity="center"/>

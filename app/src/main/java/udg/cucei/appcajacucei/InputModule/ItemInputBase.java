@@ -185,11 +185,11 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
                     //dialog message
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(ItemInputBase.this);
-                    builder1.setMessage("Desea continuar agregando datos o crear el reporte con los datos actuales?");
+                    builder1.setMessage(R.string.inputBase_continuar_Crear);
                     builder1.setCancelable(true);
 
                     builder1.setPositiveButton(
-                            "continuar",
+                            R.string.inputBase_continuar,
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
 
@@ -206,7 +206,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                                 }
                             });
                     builder1.setNegativeButton(
-                            "crear reporte",
+                            R.string.inputBase_crear,
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
 
@@ -234,7 +234,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
 
                     if(machine.PalleAlto==-1){
-                        Toast.makeText(getApplicationContext(), "porfavor seleccione una opcion",
+                        Toast.makeText(getApplicationContext(), R.string.inputBase_plzSelectOpt,
                                 Toast.LENGTH_SHORT).show();
                     }else {
 
@@ -285,7 +285,7 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                 case 6:
 
                     if(machine.ContainerAncho==-1){
-                        Toast.makeText(getApplicationContext(), "porfavor seleccione una opcion",
+                        Toast.makeText(getApplicationContext(), R.string.inputBase_plzSelectOpt, //TODO: error
                                 Toast.LENGTH_SHORT).show();
                     }else{
 

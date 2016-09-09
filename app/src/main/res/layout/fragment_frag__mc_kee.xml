@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="VALOR MCKEE"
+            android:text="@string/mckee_valorMckee"
             android:id="@+id/textView5"
             android:textColor="#fcfcfc"
             android:layout_centerVertical="true"
@@ -47,7 +47,7 @@
         android:background="@drawable/edit_text_shape"
         android:id="@+id/McKee_edit_calibre"
         android:layout_gravity="center_horizontal"
-        android:hint="CALIBRE"
+        android:hint="@string/mckee_calibre"
         android:gravity="center" />
 
     <Space
@@ -64,7 +64,7 @@
         android:background="@drawable/edit_text_shape"
         android:id="@+id/McKee_edit_largo"
         android:layout_gravity="center_horizontal"
-        android:hint="LARGO"
+        android:hint="@string/item_LARGO"
         android:gravity="center" />
 
     <Space
@@ -80,7 +80,7 @@
         android:background="@drawable/edit_text_shape"
         android:id="@+id/McKee_edit_ancho"
         android:layout_gravity="center_horizontal"
-        android:hint="ANCHO"
+        android:hint="@string/item_ancho"
         android:gravity="center" />
 
     <Space
@@ -96,7 +96,7 @@
         android:background="@drawable/edit_text_shape"
         android:id="@+id/McKee_edit_etc"
         android:layout_gravity="center_horizontal"
-        android:hint="ETC"
+        android:hint="@string/mckee_etcValue"
         android:gravity="center" />
 
 

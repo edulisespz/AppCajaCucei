@@ -1,15 +1,12 @@
 package udg.cucei.appcajacucei.OutputModule;
 
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -35,8 +32,6 @@ public class Frag_EmpaquetadoResults extends Fragment {
     TextView lbl_volpack;
     TextView lbl_numpacks;
 
-    private View rootView;
-
     public Frag_EmpaquetadoResults() {
         // Required empty public constructor
     }
@@ -47,7 +42,7 @@ public class Frag_EmpaquetadoResults extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-       rootView = inflater.inflate(R.layout.fragment_empaquetado_results, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_empaquetado_results, container, false);
 
 
         //get the ObjectData
@@ -56,7 +51,7 @@ public class Frag_EmpaquetadoResults extends Fragment {
             objMachime = bundle.getParcelable(StateMachine.KEY_DATA);
         }
 
-        lbl_numitems = (TextView) rootView.findViewById(R.id.lbl_numitems); //TODO: LO DEMáS
+        lbl_numitems = (TextView) rootView.findViewById(R.id.lbl_numitems); //TODO: LO DEMAS
         lbl_volpack = (TextView) rootView.findViewById(R.id.lbl_volpack);
         lbl_numpacks = (TextView) rootView.findViewById(R.id.lbl_numPacks);
 
@@ -72,7 +67,7 @@ public class Frag_EmpaquetadoResults extends Fragment {
         //
         //
         if( objMachime.itemItsBigger(element, box)==true ){
-            Toast.makeText(getActivity(), "the item its bigger than the box!!",
+            Toast.makeText(getActivity(), R.string.itemMasGrandequeCaja,
                     Toast.LENGTH_SHORT).show();
             getActivity().finish();
         }
@@ -82,7 +77,7 @@ public class Frag_EmpaquetadoResults extends Fragment {
 
         if(elements2store == -1){
             Log.e("no number of items","Quiting activity");
-            Toast.makeText(getActivity(), "quantity not found!",
+            Toast.makeText(getActivity(), R.string.cantidadMissing,
                     Toast.LENGTH_SHORT).show();
 
             //getActivity().finish(); //TODO: add later
@@ -186,6 +181,7 @@ public class Frag_EmpaquetadoResults extends Fragment {
     }
 
 
+    //this function was for the dinamic layouts, but i dont find it practical
     private void setNumberOfItemsOnTOPLayout(LinearLayout linearLayout, int item_H,int item_W){
 
         int rows=1,columns=1;

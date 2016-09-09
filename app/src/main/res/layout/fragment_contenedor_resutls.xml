@@ -38,7 +38,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Volumen"
+            android:text="@string/frag_entari_volumen"
             android:id="@+id/textView9"
             android:layout_marginStart="82dp"
             android:layout_marginTop="25dp"
@@ -48,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Area"
+            android:text="@string/frag_entari_area"
             android:id="@+id/textView11"
             android:layout_marginTop="5dp"
             android:layout_below="@+id/textView9"
@@ -57,7 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Piezas"
+            android:text="@string/frag_entari_piezas"
             android:id="@+id/textView12"
             android:layout_below="@+id/textView11"
             android:layout_alignStart="@+id/textView11"
@@ -66,7 +66,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cajas"
+            android:text="@string/frag_entari_cajas"
             android:id="@+id/textView13"
             android:layout_below="@+id/textView12"
             android:layout_alignStart="@+id/textView12"
@@ -75,7 +75,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cajas por tarima"
+            android:text="@string/frag_entari_cajPpallet"
             android:id="@+id/textView14"
             android:layout_marginTop="5dp"
             android:layout_below="@+id/textView13"
@@ -126,7 +126,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tarimas"
+            android:text="@string/frag_ContainerRes_numPallets"
             android:id="@+id/textView16"
             android:layout_marginTop="5dp"
             android:layout_below="@+id/textView14"

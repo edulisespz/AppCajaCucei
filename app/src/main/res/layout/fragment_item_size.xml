@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="DIMENSIONES"
+                android:text="@string/Item_DIMENSIONES"
                 android:id="@+id/textView"
                 android:textSize="22sp"
                 android:layout_centerVertical="true"
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Sis Ing"
+                android:text="@string/Sis_Ingles"
                 android:id="@+id/textView2"
                 android:paddingTop="5dp"
                 android:textSize="15sp"
@@ -60,7 +60,7 @@
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sis Int"
+                android:text="@string/sis_international"
                 android:id="@+id/switchUnitSystem"
                 android:layout_alignTop="@+id/textView2"
                 android:layout_toLeftOf="@+id/textView2"
@@ -92,7 +92,7 @@
                 android:background="@drawable/edit_text_shape"
                 android:id="@+id/item_editText_Quantity"
                 android:layout_gravity="center_horizontal"
-                android:hint="CANTIDAD"
+                android:hint="@string/item_CANTIDAD"
                 android:gravity="center"
                 />
 
@@ -110,7 +110,7 @@
                 android:background="@drawable/edit_text_shape"
                 android:id="@+id/item_editText_Alto"
                 android:layout_gravity="center_horizontal"
-                android:hint="ALTO"
+                android:hint="@string/item_Alto"
                 android:gravity="center" />
 
             <Space
@@ -127,7 +127,7 @@
                 android:background="@drawable/edit_text_shape"
                 android:id="@+id/item_editText_Ancho"
                 android:layout_gravity="center_horizontal"
-                android:hint="ANCHO"
+                android:hint="@string/item_ancho"
                 android:gravity="center" />
 
             <Space
@@ -143,7 +143,7 @@
                 android:background="@drawable/edit_text_shape"
                 android:id="@+id/item_editText_Grosor"
                 android:layout_gravity="center_horizontal"
-                android:hint="LARGO"
+                android:hint="@string/item_LARGO"
                 android:gravity="center" />
 
             <Space
@@ -159,7 +159,7 @@
                 android:background="@drawable/edit_text_shape"
                 android:id="@+id/item_editText_Peso"
                 android:layout_gravity="center_horizontal"
-                android:hint="PESO"
+                android:hint="@string/item_WEIGHT"
                 android:gravity="center" />
 
             <Space

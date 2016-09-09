@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Volumen"
+            android:text="@string/frag_entari_volumen"
             android:id="@+id/textView9"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
@@ -51,7 +51,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Area"
+            android:text="@string/frag_entari_area"
             android:id="@+id/textView11"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/textView9"
@@ -60,7 +60,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Piezas"
+            android:text="@string/frag_entari_piezas"
             android:id="@+id/textView12"
             android:layout_below="@+id/textView11"
             android:layout_alignStart="@+id/textView11"
@@ -69,7 +69,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cajas"
+            android:text="@string/frag_entari_cajas"
             android:id="@+id/textView13"
             android:layout_below="@+id/textView12"
             android:layout_alignStart="@+id/textView12"
@@ -78,7 +78,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cajas por cama"
+            android:text="@string/frag_entari_cajPpallet"
             android:id="@+id/textView14"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/textView13"

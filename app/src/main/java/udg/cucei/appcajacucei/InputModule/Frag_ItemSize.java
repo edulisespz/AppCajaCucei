@@ -3,7 +3,6 @@ package udg.cucei.appcajacucei.InputModule;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -41,7 +40,7 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
     EditText editPeso;
     boolean  isVertical;
 
-    //TODO: ithink a elements2store variable is nedeed...
+    //TODO: i think a elements2store variable is nedeed...
 
     Spinner mySpinner;
     Switch swtchMetricSys;
@@ -174,24 +173,24 @@ public class Frag_ItemSize extends Fragment implements AdapterView.OnItemSelecte
 
         switch (position){
             case 0:
-                editAncho.setHint("ANCHO");
-                editGrosor.setHint("LARGO");
-                editPeso.setHint("PESO");
+                editAncho.setHint(R.string.item_ancho);
+                editGrosor.setHint(R.string.item_LARGO);
+                editPeso.setHint(R.string.item_WEIGHT);
                 editGrosor.setVisibility(View.VISIBLE);
 
                 intf_DataCallBack.ScrollViewChanger("square");
                 break;
             case 1:
-                editAncho.setHint("DIAMETRO");
-                editPeso.setHint("CANTIDAD");
+                editAncho.setHint(R.string.item_DIAMETRO);
+                editPeso.setHint(R.string.item_WEIGHT);//TODO: may need changing
                 editGrosor.setVisibility(View.GONE);
 
                 intf_DataCallBack.ScrollViewChanger("cilinder");
                 break;
             case 2:
-                editAncho.setHint("RADIO MAYOR");
-                editGrosor.setHint("RADIO MENOR");
-                editPeso.setHint("PESO");
+                editAncho.setHint(R.string.item_radioMAYOR);
+                editGrosor.setHint(R.string.item_radioMENOR);
+                editPeso.setHint(R.string.item_WEIGHT);
                 editGrosor.setVisibility(View.VISIBLE);
 
                 intf_DataCallBack.ScrollViewChanger("bottle");

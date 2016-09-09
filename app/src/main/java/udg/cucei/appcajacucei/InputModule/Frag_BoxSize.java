@@ -134,9 +134,9 @@ public class Frag_BoxSize extends Fragment {
     };
 
     public interface IntefaceData_Box{
-        public void geDataSizes_Box(int alto, int ancho, int Grueso, int peso);
-        public void getIsAmarred_Box(boolean isAmarred);
-        public void getIsDoubleCartonBox(boolean isCartonDouble);
+        void geDataSizes_Box(int alto, int ancho, int Grueso, int peso);
+        void getIsAmarred_Box(boolean isAmarred);
+        void getIsDoubleCartonBox(boolean isCartonDouble);
     }
 
     @Override

@@ -96,9 +96,9 @@ public class Frag_Pallet extends Fragment {
                 //    flag_notingSelcted = false;
                 //}
                 //else {//TARIMA
-                lbl_pall_Alto.setText("ALTO");
-                lbl_pall_largo.setText("LARGO");
-                lbl_pall_Ancho.setText("ANCHO");
+                lbl_pall_Alto.setText(R.string.item_Alto);
+                lbl_pall_largo.setText(R.string.item_LARGO);
+                lbl_pall_Ancho.setText(R.string.item_ancho);
 
                 intfPallet.geDatatype_Pallet(-1, -1, -1);
 

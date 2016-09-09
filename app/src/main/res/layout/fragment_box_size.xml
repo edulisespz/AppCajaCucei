@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="DIMENSIONES"
+            android:text="@string/Item_DIMENSIONES"
             android:id="@+id/textView3"
             android:textColor="#fcfcfc"
             android:layout_alignParentTop="true"
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="INTERNAS"
+            android:text="@string/box_internas"
             android:id="@+id/textView4"
             android:layout_below="@+id/textView3"
             android:layout_centerHorizontal="true"
@@ -78,7 +78,7 @@
         android:background="@drawable/edit_text_shape"
         android:id="@+id/box_editText_Alto"
         android:layout_gravity="center_horizontal"
-        android:hint="ALTO"
+        android:hint="@string/item_Alto"
         android:gravity="center" />
 
     <Space
@@ -95,7 +95,7 @@
         android:background="@drawable/edit_text_shape"
         android:id="@+id/box_editText_Ancho"
         android:layout_gravity="center_horizontal"
-        android:hint="ANCHO"
+        android:hint="@string/item_ancho"
         android:gravity="center" />
 
     <Space
@@ -111,7 +111,7 @@
         android:background="@drawable/edit_text_shape"
         android:id="@+id/box_editText_Grosor"
         android:layout_gravity="center_horizontal"
-        android:hint="LARGO"
+        android:hint="@string/item_ancho"
         android:gravity="center" />
 
     <Space
