@@ -37,4 +37,6 @@
     <string name="frag_entari_cajas">Cajas</string>
     <string name="frag_entari_piezas">Piezas</string>
     <string name="frag_ContainerRes_numPallets">Camas</string>
+    <string name="selec_file_to_share">Seleccione el archivo a compartir</string>
+    <string name="plz_selectopt2">por favor seleccione una opcion</string>
 </resources>

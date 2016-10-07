@@ -3,7 +3,6 @@ package udg.cucei.appcajacucei.InputModule;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +19,6 @@ import udg.cucei.appcajacucei.OutputModule.Frag_ContenedorResutls;
 import udg.cucei.appcajacucei.OutputModule.Frag_EmpaquetadoResults;
 import udg.cucei.appcajacucei.OutputModule.Frag_EntarimadoResults;
 import udg.cucei.appcajacucei.PdfModule.PdfClass;
-import udg.cucei.appcajacucei.Unused_Things.ReportActivity;
 import udg.cucei.appcajacucei.R;
 
 public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.IntefaceData,Frag_BoxSize.IntefaceData_Box,
@@ -234,7 +232,10 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
 
 
                     if(machine.PalleAlto==-1){
-                        Toast.makeText(getApplicationContext(), R.string.inputBase_plzSelectOpt,
+                        //Toast.makeText(getApplicationContext(), R.string.inputBase_plzSelectOpt,
+                        //        Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),
+                                getApplicationContext().getString(R.string.inputBase_plzSelectOpt),
                                 Toast.LENGTH_SHORT).show();
                     }else {
 
@@ -285,7 +286,9 @@ public class ItemInputBase extends AppCompatActivity implements Frag_ItemSize.In
                 case 6:
 
                     if(machine.ContainerAncho==-1){
-                        Toast.makeText(getApplicationContext(), R.string.inputBase_plzSelectOpt, //TODO: error
+                        //Toast.makeText(getApplicationContext(), R.string.inputBase_plzSelectOpt, //TODO: error
+                        //        Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.inputBase_plzSelectOpt),
                                 Toast.LENGTH_SHORT).show();
                     }else{
 

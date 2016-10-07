@@ -74,6 +74,8 @@
     <string name="frag_entari_cajas">Boxes</string>
     <string name="frag_entari_cajPpallet">Boxes per pallet</string>
     <string name="frag_ContainerRes_numPallets">Pallets</string>
+    <string name="selec_file_to_share"> Select the file to share</string>
+    <string name="plz_selectopt2">please select an option</string>
 
 
 </resources>
